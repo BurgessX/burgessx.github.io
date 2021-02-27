@@ -1,0 +1,549 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>OpenVLC 可行性测试报告 - BurgessX&#039;s Blog</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="BurgessX&#039;s Blog"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="BurgessX&#039;s Blog"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="OpenVLC 简介OpenVLC是一个由西班牙IMDEA网络研究所领导研究和开发工作的开源、灵活、低成本的可见光通信系统平台。OpenVLC的灵活性体现在一个OpenVLC模块既可以充当发射器，也可以充当接收器。 OpenVLC 1.3平台由搭载AM3358芯片（ARM A8架构）的BeagleBone Black（BBB）开发板以及OpenVLC扩展板组成，以Linux（Debian 8及以上"><meta property="og:type" content="blog"><meta property="og:title" content="OpenVLC 可行性测试报告"><meta property="og:url" content="https://burgessx.github.io/2021/02/27/OpenVLC/OpenVLC%E5%8F%AF%E8%A1%8C%E6%80%A7%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A/"><meta property="og:site_name" content="BurgessX&#039;s Blog"><meta property="og:description" content="OpenVLC 简介OpenVLC是一个由西班牙IMDEA网络研究所领导研究和开发工作的开源、灵活、低成本的可见光通信系统平台。OpenVLC的灵活性体现在一个OpenVLC模块既可以充当发射器，也可以充当接收器。 OpenVLC 1.3平台由搭载AM3358芯片（ARM A8架构）的BeagleBone Black（BBB）开发板以及OpenVLC扩展板组成，以Linux（Debian 8及以上"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="e:/Typora_img/测试报告/750feb7fb8b1397c06ef859dfbfcebeb"><meta property="og:image" content="e:/Typora_img/测试报告/image-20210121170856996.png"><meta property="og:image" content="c:/Users/Lenovo/AppData/Roaming/Typora/typora-user-images/image-20210121181842220.png"><meta property="og:image" content="c:/Users/Lenovo/AppData/Roaming/Typora/typora-user-images/image-20210121184154339.png"><meta property="og:image" content="c:/Users/Lenovo/AppData/Roaming/Typora/typora-user-images/image-20210121182755787.png"><meta property="og:image" content="c:/Users/Lenovo/AppData/Roaming/Typora/typora-user-images/image-20210121185355691.png"><meta property="og:image" content="e:/Typora_img/测试报告/88548519-7ee93e00-d01f-11ea-890b-62dae1b0e016.JPG"><meta property="og:image" content="e:/Typora_img/测试报告/image-20210122122503898.png"><meta property="og:image" content="e:/Typora_img/测试报告/4.jpg"><meta property="og:image" content="e:/Typora_img/测试报告/image-20210122131534417.png"><meta property="og:image" content="e:/Typora_img/测试报告/1.jpg"><meta property="og:image" content="e:/Typora_img/测试报告/image-20210122132047497.png"><meta property="og:image" content="e:/Typora_img/测试报告/image-20210122131918905.png"><meta property="og:image" content="e:/Typora_img/测试报告/image-20210122131750170.png"><meta property="article:published_time" content="2021-02-27T08:56:58.365Z"><meta property="article:modified_time" content="2021-02-27T09:00:50.820Z"><meta property="article:author" content="BurgessX"><meta property="article:tag" content="VLC"><meta property="article:tag" content="Beaglebone"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="E:\Typora_img\测试报告\750feb7fb8b1397c06ef859dfbfcebeb"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://burgessx.github.io/2021/02/27/OpenVLC/OpenVLC%E5%8F%AF%E8%A1%8C%E6%80%A7%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A/"},"headline":"OpenVLC 可行性测试报告","image":["e:/Typora_img/测试报告/image-20210121170856996.png","c:/Users/Lenovo/AppData/Roaming/Typora/typora-user-images/image-20210121181842220.png","c:/Users/Lenovo/AppData/Roaming/Typora/typora-user-images/image-20210121184154339.png","c:/Users/Lenovo/AppData/Roaming/Typora/typora-user-images/image-20210121182755787.png","c:/Users/Lenovo/AppData/Roaming/Typora/typora-user-images/image-20210121185355691.png","e:/Typora_img/测试报告/image-20210122122503898.png","e:/Typora_img/测试报告/4.jpg","e:/Typora_img/测试报告/image-20210122131534417.png","e:/Typora_img/测试报告/1.jpg","e:/Typora_img/测试报告/image-20210122132047497.png","e:/Typora_img/测试报告/image-20210122131918905.png","e:/Typora_img/测试报告/image-20210122131750170.png"],"datePublished":"2021-02-27T08:56:58.365Z","dateModified":"2021-02-27T09:00:50.820Z","author":{"@type":"Person","name":"BurgessX"},"description":"OpenVLC 简介OpenVLC是一个由西班牙IMDEA网络研究所领导研究和开发工作的开源、灵活、低成本的可见光通信系统平台。OpenVLC的灵活性体现在一个OpenVLC模块既可以充当发射器，也可以充当接收器。 OpenVLC 1.3平台由搭载AM3358芯片（ARM A8架构）的BeagleBone Black（BBB）开发板以及OpenVLC扩展板组成，以Linux（Debian 8及以上"}</script><link rel="canonical" href="https://burgessx.github.io/2021/02/27/OpenVLC/OpenVLC%E5%8F%AF%E8%A1%8C%E6%80%A7%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A/"><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/github.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 5.4.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/">BurgessX</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2021-02-27T08:56:58.365Z" title="2021/2/27 下午4:56:58">2021-02-27</time>发表</span><span class="level-item"><time dateTime="2021-02-27T09:00:50.820Z" title="2021/2/27 下午5:00:50">2021-02-27</time>更新</span><span class="level-item">25 分钟读完 (大约3753个字)</span></div></div><h1 class="title is-3 is-size-4-mobile">OpenVLC 可行性测试报告</h1><div class="content"><h1 id="OpenVLC-简介"><a href="#OpenVLC-简介" class="headerlink" title="OpenVLC 简介"></a>OpenVLC 简介</h1><p>OpenVLC是一个由西班牙IMDEA网络研究所领导研究和开发工作的开源、灵活、低成本的可见光通信系统平台。OpenVLC的灵活性体现在一个OpenVLC模块既可以充当发射器，也可以充当接收器。</p>
+<p>OpenVLC 1.3平台由搭载AM3358芯片（ARM A8架构）的BeagleBone Black（BBB）开发板以及OpenVLC扩展板组成，以Linux（Debian 8及以上）为操作系统。</p>
+<p>利用BBB中的可编程实时单元（Programmable Real Time Units，PRU），OpenVLC传输频率可达到1MHz，能够在距离超过3米的传输层实现400kb/s的数据吞吐量。</p>
+<img src="E:\Typora_img\测试报告\750feb7fb8b1397c06ef859dfbfcebeb" style="transform: scale(0.8); zoom: 67%;">
+
+<h1 id="平台搭建过程"><a href="#平台搭建过程" class="headerlink" title="平台搭建过程"></a>平台搭建过程</h1><h2 id="在SD卡中刷入系统镜像"><a href="#在SD卡中刷入系统镜像" class="headerlink" title="在SD卡中刷入系统镜像"></a>在SD卡中刷入系统镜像</h2><ol>
+<li>首先需要一张容量至少4GB的SD卡，将其格式化。</li>
+</ol>
+<img src="E:\Typora_img\测试报告\image-20210121170856996.png" alt="image-20210121170856996" style="zoom: 67%;" />
+
+<ol start="2">
+<li><p>下载Debian系统镜像并解压。可以选择Debian 8或以上的版本，由于Debian 9版本支持可视化界面，因此这里选择下载Debian 9版本。在后面的步骤，不同版本的系统配置方式略有不同。另外，系统需要从Beagleboard网站上下载，此网站上的Debian系统是为Beagleboard系列开发板定制的，与Debian官网上的系统不同。</p>
+<blockquote>
+<p>下载链接：<a target="_blank" rel="noopener" href="https://debian.beagleboard.org/images/bone-debian-9.12-imgtec-armhf-2020-04-06-4gb.img.xz">https://debian.beagleboard.org/images/bone-debian-9.12-imgtec-armhf-2020-04-06-4gb.img.xz</a></p>
+</blockquote>
+</li>
+<li><p>下载安装Win32 Disk Imager工具，用此工具将bone-debian-9.12-imgtec-armhf-2020-04-06-4gb.img镜像写入SD卡。</p>
+</li>
+</ol>
+<img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20210121181842220.png" alt="image-20210121181842220" style="zoom:67%;" />
+
+<h2 id="给BBB刷系统"><a href="#给BBB刷系统" class="headerlink" title="给BBB刷系统"></a>给BBB刷系统</h2><p>在BBB断电的情况下，将SD卡插入开发板中，接着，用USB线（或USB线和网线）连接电脑和BBB。</p>
+<p>Beagleboard官网发布的Debian系统分为两大类，分别为“eMMC flasher”和“without flashing the eMMC”。</p>
+<ul>
+<li><p>若下载的是系统是前者，则系统含有eMMC flasher工具，进入系统后（方法见<a href="#communication_method">三种与开发板通信的方式</a>），执行以下命令即可将SD卡中的系统烧写入BBB的eMMC（Embedded Multi Media Card）：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /opt/scripts/tools/eMMC</span><br><span class="line">sudo ./bbb-eMMC-flasher-eewiki-ext4.sh</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>若下载的系统是后者，则需要进入SD中的系统（方法见<a href="#communication_method">三种与开发板通信的方式</a>），打开uEnv.txt文件：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nano /boot/uEnv.txt</span><br></pre></td></tr></table></figure>
+
+<p>将最后一行的</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">cmdline=init=/opt/scripts/tools/eMMC/init-eMMC-flasher-v3.sh</span></span><br></pre></td></tr></table></figure>
+
+<p>取消注释。重启后（<code>sudo reboot</code>，或按<code>RESET</code>键，或断电再供电），系统才会自动写入开发板。</p>
+</li>
+</ul>
+<p>在将系统烧写进开发板的过程中，BBB的四个LED灯会以跑马灯的形式闪烁，待四个LED灯全部亮起或全部熄灭，或者出现提示“eMMC has been flashed”时，系统即烧写完成。</p>
+<blockquote>
+<p><a id="communication_method">三种与开发板通信的方式</a>：</p>
+<ul>
+<li><p>方法一：打开Windows的“设备管理器”，查看新接入的BBB的端口号。使用PuTTY（或其他软件）与BBB进行串口通信，波特率设置为115200。</p>
+<p>这种方法只需要一根USB线，USB线起到了供电和（串口）通信的作用。</p>
+<img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20210121184154339.png" alt="image-20210121184154339" style="zoom:67%;" />
+</li>
+<li><p>方法二：用网线将BBB连接到电脑，USB线用于供电，用Windows的命令行窗口的ssh命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh debian@192.168.7.2</span><br></pre></td></tr></table></figure>
+
+<p>或者用软件PuTTY（或其他软件），通过SSH连接IP 192.168.7.2。Debian系统的初始用户名为debian，密码为temppwd；超级用户root的密码为root。</p>
+<p>这种方法需要一根USB线和一根网线，分别用来给BBB供电和与BBB通信。</p>
+<img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20210121182755787.png" alt="image-20210121182755787" style="zoom:67%;" />
+</li>
+<li><p>方法三（仅适用于Debian 9或以上版本）：打开浏览器，输入192.168.7.2即可进入Cloud IDE界面，无须输入用户名和密码。</p>
+<p>这种方法只需要一根USB线，USB线起到了供电和（网络）通信的作用。</p>
+<p><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20210121185355691.png" alt="image-20210121185355691"></p>
+</li>
+</ul>
+</blockquote>
+<h2 id="设置系统"><a href="#设置系统" class="headerlink" title="设置系统"></a>设置系统</h2><ol>
+<li><p>取消HDMI功能</p>
+<p>由于BBB的HDMI占用了PRU的部分引脚，因此需要取消HDMI使能。编辑uEnv.txt文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nano &#x2F;boot&#x2F;uEnv.txt</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>若系统为Debian 8，则取消此行的注释：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#dtb&#x3D;am335x-boneblack-emmc-overlay.dtb</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>若系统为Debian 9或以上，则取消以下两行的注释：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#disable_uboot_overlay_video&#x3D;1</span><br><span class="line">#disable_uboot_overlay_audio&#x3D;1</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>重启BBB后，HDMI便取消使能了。</p>
+</li>
+<li><p>安装Linux头文件库</p>
+<p>首先将BBB连接到互联网（<a href="#connect_to_network">联网方法</a>），接着更新软件列表：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br></pre></td></tr></table></figure>
+
+<p>然后安装linux-headers：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install linux-headers-$(uname -r)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>将源代码拷贝到开发板</p>
+<p>源代码可放在/home/debian目录下。拷贝方法有以下几种：</p>
+<ul>
+<li><p>方法一：通过git命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd &#x2F;home&#x2F;Debian</span><br><span class="line">sudo git clone https:&#x2F;&#x2F;github.com&#x2F;openvlc&#x2F;OpenVLC</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>方法二：通过scp命令</p>
+<p>先在Github上将源代码下载到主机，再通过以下命令将源代码文件夹传输到BBB：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scp -r .&#x2F;OpenVLC-master debian@192.168.7.2:&#x2F;home&#x2F;debian</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>拷贝完源代码后，需要给代码文件赋予读写和执行权限，以方便后续操作：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod -R 777 OpenVLC-master</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<blockquote>
+<p><a id="connect_to_network">联网方法</a></p>
+<p>BBB开发板有三个网卡：eth0，usb0和usb1，分别对应网线口、Mini-A USB和Type A USB接口。测试表明无法只通过一条USB让BBB联网，可能是因为一条USB线无法同时传输网络数据和与主机的通信数据。因此这里采用“网线+USB”的连接方案。</p>
+<p>联网步骤如下：</p>
+<ol>
+<li><p>主机采用串口与BBB通信，并将网卡网络分享给网线口网卡。</p>
+</li>
+<li><p>IP设置</p>
+<p>这里BBB和主机都采用静态IP，网关分别设为对方的IP。在BBB上须修改/etc/network/interfaces文件，具体设置如下（主机IP为192.168.137.1，BBB的IP为192.168.137.2，其他IP类似）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">auto eth0</span><br><span class="line">allow-hotplug eth0</span><br><span class="line">iface eth0 inet static</span><br><span class="line">    address 192.168.137.2</span><br><span class="line">    network 192.168.137.0</span><br><span class="line">    netmask 255.255.255.0</span><br><span class="line">    gateway 192.168.137.1</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>DNS服务器设置</p>
+<p>DNS服务器设置需要在/etc/resolv.conf文件中添加DNS服务器的IP地址，可直接设置为主机网线口网卡的IP地址，或谷歌DNS服务器等。可设置多个DNS服务器备用。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">nameserver 192.168.137.1</span><br><span class="line">nameserver 8.8.8.8</span><br><span class="line">nameserver 114.114.114.114</span><br><span class="line">nameserver 119.29.29.29</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>重启网卡</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo &#x2F;etc&#x2F;init.d&#x2F;networking restart</span><br></pre></td></tr></table></figure>
+
+<p>也可以先关闭再开启网卡：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo ifdown eth0</span><br><span class="line">sudo ifup eth0</span><br></pre></td></tr></table></figure>
+
+<p>注意：BBB重启后IP地址会重新随机分配（目前不知道为什么），不会跟<code>/etc/network/interfaces</code>文件中设置的一样，需要重启网卡才能保持一致。</p>
+</li>
+<li><p>全部操作完成后，执行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ping baidu.com</span><br></pre></td></tr></table></figure>
+
+<p>以测试网络配置是否正确。</p>
+</li>
+</ol>
+</blockquote>
+<h2 id="连接扩展板"><a href="#连接扩展板" class="headerlink" title="连接扩展板"></a>连接扩展板</h2><p>如图连接开发板和扩展板，扩展板用5V电源供电。</p>
+<img src="E:\Typora_img\测试报告\88548519-7ee93e00-d01f-11ea-890b-62dae1b0e016.JPG" style="zoom:67%;" >
+
+
+<h2 id="设置TX-RX"><a href="#设置TX-RX" class="headerlink" title="设置TX/RX"></a>设置TX/RX</h2><ol>
+<li><p>安装PRU编译器</p>
+<p>下载并安装PRU编译器。文件拷贝方法和运行方法前面已经提到。</p>
+<blockquote>
+<p>下载链接：<a target="_blank" rel="noopener" href="https://software-dl.ti.com/codegen/esd/cgt_public_sw/PRU/2.3.3/ti_cgt_pru_2.3.3_armlinuxa8hf_busybox_installer.sh">https://software-dl.ti.com/codegen/esd/cgt_public_sw/PRU/2.3.3/ti_cgt_pru_2.3.3_armlinuxa8hf_busybox_installer.sh</a></p>
+</blockquote>
+</li>
+<li><p>建立PRU编译器和链接器的符号链接</p>
+<p>运行以下命令即可：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cd /usr/share/ti/cgt-pru</span><br><span class="line">sudo mkdir bin</span><br><span class="line">cd bin</span><br><span class="line">sudo ln -s /usr/bin/clpru clpru</span><br><span class="line">sudo ln -s /usr/bin/lnkpru lnkpru</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>添加VLC网卡驱动</p>
+<p>发送器（TX）和接收器（RX）的VLC网卡的需要使用不同的IP地址，打开Driver文件夹下的load_test.sh脚本文件，将TX和RX的VLC网卡IP修改成不一样的值，同时也不要和其他网卡IP一样。可以将TX设为192.168.0.1，RX设为192.168.0.2。</p>
+<p>修改完毕后，运行load_test.sh脚本文件进行测试：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo .&#x2F;load_test.sh</span><br></pre></td></tr></table></figure>
+
+<p>此脚本会调用之前安装的linux-headers和OpenVLC的项目文件。运行完此脚本文件后，通过<code>ifconfig</code>命令可以查看网卡信息，会发现多了一项网卡驱动：<code>vlc0</code>。</p>
+</li>
+<li><p>启动PRU</p>
+<p>分别运行PRU/TX和PRU/RX文件夹下的deploy.sh脚本文件，验证代码的正确性以及测试OpenVLC模块是否能正常工作（大功率LED灯是否能发光，设备是否发热严重等）。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo .&#x2F;deploy.sh</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>测试数据吞吐量</p>
+<p>使用iperf工具进行测试，TX端执行命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo iperf -c 192.168.0.2 -u -b 400k -l 800 -p 10001 -t 100</span><br></pre></td></tr></table></figure>
+
+<p>RX端执行命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo iperf -u -l 800 -s -i3 -B 192.168.0.2 -p 10001</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h1 id="实际实验过程与结果"><a href="#实际实验过程与结果" class="headerlink" title="实际实验过程与结果"></a>实际实验过程与结果</h1><h2 id="OpenVLC平台搭建"><a href="#OpenVLC平台搭建" class="headerlink" title="OpenVLC平台搭建"></a>OpenVLC平台搭建</h2><h3 id="扩展板制作"><a href="#扩展板制作" class="headerlink" title="扩展板制作"></a>扩展板制作</h3><h4 id="电路原理图"><a href="#电路原理图" class="headerlink" title="电路原理图"></a>电路原理图</h4><blockquote>
+<p>电路原理图链接：<a target="_blank" rel="noopener" href="https://github.com/openvlc/OpenVLC/blob/master/Latest_Version/Hardware/Design_files/Schematics.SchDoc">https://github.com/openvlc/OpenVLC/blob/master/Latest_Version/Hardware/Design_files/Schematics.SchDoc</a></p>
+</blockquote>
+<p><img src="E:\Typora_img\测试报告\image-20210122122503898.png" alt="image-20210122122503898"></p>
+<h4 id="BOM清单"><a href="#BOM清单" class="headerlink" title="BOM清单"></a>BOM清单</h4><blockquote>
+<p>BOM清单链接：<a target="_blank" rel="noopener" href="https://github.com/openvlc/OpenVLC/blob/master/Latest_Version/Hardware/Design_files/BOM.xlsx">https://github.com/openvlc/OpenVLC/blob/master/Latest_Version/Hardware/Design_files/BOM.xlsx</a></p>
+</blockquote>
+<p>其中部分元器件采用国产元器件替代。</p>
+<table>
+<thead>
+<tr>
+<th align="center">数量</th>
+<th>组件</th>
+<th>电路图代号</th>
+<th>值</th>
+<th>封装</th>
+<th>产品</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">1</td>
+<td>DC-DC</td>
+<td>DC-DC</td>
+<td></td>
+<td>TO-263-6</td>
+<td>LM2585D2:E25SX-ADJ</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td>Schottky</td>
+<td>D1</td>
+<td>850mV @ 3A</td>
+<td>DO-214AC (SMA)</td>
+<td>SK310AR3GCT-ND</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td>MGD</td>
+<td>MGD_C MGD_I</td>
+<td></td>
+<td>SOT-23-6</td>
+<td>LM5114BMF/NOPBCT</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td>MOSFET</td>
+<td>MOSFET_C MOSFET_I</td>
+<td></td>
+<td>TO-236-3</td>
+<td>SQ2308CES-T1_GE3</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td>OP AMP</td>
+<td>O</td>
+<td>2 CIRCUITS</td>
+<td>8-MSOP-EP</td>
+<td>LTC6269IMS8E</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td>ADC</td>
+<td>ADC_PD</td>
+<td>3MSPS 12bits</td>
+<td>SOT-23-6</td>
+<td>ADS7883</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td>Connector</td>
+<td>(big rectangle)</td>
+<td></td>
+<td></td>
+<td>PJ-102A</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td>Headers</td>
+<td>(12x2 one of each side)</td>
+<td></td>
+<td></td>
+<td>732-5303</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td>Inductor</td>
+<td>L1</td>
+<td>33µH</td>
+<td>D (8.70mm) x13.00mm</td>
+<td>RLB0914-330KL</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td>LED</td>
+<td>HL</td>
+<td>3000K</td>
+<td>3.45mm x 3.45mm</td>
+<td>XHP35A-01-0000-0D0HC40E7CT-ND</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td>Lense</td>
+<td>(on top of HL)</td>
+<td>30°, 31°</td>
+<td>16.1mm D</td>
+<td>FA10645_TINA-M</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td>Heatsink</td>
+<td>(below HL)</td>
+<td></td>
+<td></td>
+<td>1528-1698-ND</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td>Photodiode</td>
+<td>PD</td>
+<td>880nm 5ns 40° Radial</td>
+<td>5mm D (T 1 3/4)</td>
+<td>QSD2030-ND</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td>Cap</td>
+<td>C1</td>
+<td>100uF</td>
+<td>Radial, encapsulado</td>
+<td>493-1548</td>
+</tr>
+<tr>
+<td align="center">6</td>
+<td>Cap</td>
+<td>C2 C5 C6_1 C6_2 C9 C11</td>
+<td>0.1 uF</td>
+<td>0603</td>
+<td>1276-1258-1</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td>Cap</td>
+<td>C3</td>
+<td>0.33 uF</td>
+<td>0603</td>
+<td>490-3294-1</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td>Cap</td>
+<td>C4</td>
+<td>1500 uF</td>
+<td>Radial, Can</td>
+<td>158AVG016MGBJ</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td>Cap</td>
+<td>C7</td>
+<td>1 uF</td>
+<td>0603</td>
+<td>1276-1942-1</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td>Cap</td>
+<td>C8</td>
+<td>0.01 uF</td>
+<td>0603</td>
+<td>1276-1921-1</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td>Cap</td>
+<td>C10</td>
+<td>0.5 pF</td>
+<td>0603</td>
+<td>1276-1818-1</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td>Cap</td>
+<td>C12 C13</td>
+<td>1000 pF</td>
+<td>0603</td>
+<td>490-8019-1</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td>Res</td>
+<td>R1</td>
+<td>3kOhm</td>
+<td>0603</td>
+<td>MCT0603-3.00K-CFCT</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td>Res</td>
+<td>R2</td>
+<td>12kOhm</td>
+<td>0603</td>
+<td>MCT0603-12.0K-CFCT</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td>Res</td>
+<td>R3</td>
+<td>1.5 kOhm</td>
+<td>0603</td>
+<td>P1.50KHCT-ND</td>
+</tr>
+<tr>
+<td align="center">5</td>
+<td>Res</td>
+<td>R4_21 R4_22 R7 R8 R11</td>
+<td>150Ohm</td>
+<td>0603</td>
+<td>RHM150DCT</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td>Res</td>
+<td>R6</td>
+<td>1kOhm</td>
+<td>0603</td>
+<td>RR08P1.0KDCT</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td>Res</td>
+<td>R5 R10</td>
+<td>75kOhm</td>
+<td>0603</td>
+<td>RR08P75.0KDCT</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td>Res</td>
+<td>R9</td>
+<td>10kOhm</td>
+<td>0603</td>
+<td>RR08P10.0KDCT</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td>Res</td>
+<td>R4_11</td>
+<td>1.8Ohm</td>
+<td>1210</td>
+<td>ERJ-P14J1R8U</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td>Res</td>
+<td>R4_12</td>
+<td>8.66Ohm</td>
+<td>1206</td>
+<td>CRCW12068R66FKEA</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td>Power switch</td>
+<td>PS</td>
+<td></td>
+<td></td>
+<td>MIC94070YC6-TR</td>
+</tr>
+</tbody></table>
+<h4 id="委托厂家制作电路板以及焊接部分元器件"><a href="#委托厂家制作电路板以及焊接部分元器件" class="headerlink" title="委托厂家制作电路板以及焊接部分元器件"></a>委托厂家制作电路板以及焊接部分元器件</h4><blockquote>
+<p>PCB设计图链接：<a target="_blank" rel="noopener" href="https://github.com/openvlc/OpenVLC/blob/master/Latest_Version/Hardware/Design_files/PCB_Design.PcbDoc">https://github.com/openvlc/OpenVLC/blob/master/Latest_Version/Hardware/Design_files/PCB_Design.PcbDoc</a></p>
+</blockquote>
+<h4 id="焊接剩余元器件及简单测试"><a href="#焊接剩余元器件及简单测试" class="headerlink" title="焊接剩余元器件及简单测试"></a>焊接剩余元器件及简单测试</h4><p>插针式元器件的焊接较为容易，这里不赘述。贴片式元器件的焊接与测试过程如下：</p>
+<ol>
+<li>将焊枪温度调整到300摄氏度左右，然后用焊枪在焊盘上涂抹适量松香。</li>
+<li>接着，在焊枪尖部附着适量（根据焊盘大小而定）金属锡，然后使贴片所用焊盘都附着上一定量的锡，同时保证电路板各焊盘之外没有多余的锡。</li>
+<li>用热风枪对准焊盘加热锡，待焊盘处的锡融化后，用镊子将贴片准确地放置于焊盘上，然后轻轻地用镊子在贴片上方压一压，使贴片贴合焊盘。</li>
+<li>将热风枪温度调到200摄氏度左右，用热风枪吹除多余松香；或者在焊接完所有元器件后，将电路板浸泡在酒精中。</li>
+<li>用胶枪将部分外露焊点包围固定。</li>
+<li>焊接完所有元器件后，对照电路图，用万用表对电路板进行简单的测试，包括导通测试、阻值、容值测量等。</li>
+</ol>
+<p>焊接完所有元器件后的成品图如下（LED灯的散热片未装，准备后续补上）：</p>
+<img src="E:\Typora_img\测试报告\4.jpg" alt="4" style="zoom: 10%;" />
+
+<h3 id="扩展板测试"><a href="#扩展板测试" class="headerlink" title="扩展板测试"></a>扩展板测试</h3><h4 id="供电问题"><a href="#供电问题" class="headerlink" title="供电问题"></a>供电问题</h4><p>扩展板需要用5V电压（5.5mm圆形接口）供电，而实验室常见的电源适配器都是12V的，不能直接接入。因此在测试阶段，我们剪掉了一个坏掉的适配器的5.5mm圆形接头，插入扩展板的圆形接口，用稳压源输出5V进行供电，解决了临时供电的问题。同时，我们也在淘宝上购买了两个5V 2A的电源适配器。</p>
+<h4 id="扩展板测试（用单片机）"><a href="#扩展板测试（用单片机）" class="headerlink" title="扩展板测试（用单片机）"></a>扩展板测试（用单片机）</h4><p>用STM32的GPIO输出3.3V电压，将电源开关芯片的CT输入（GPIO1_29）拉高，同时通过简单的程序控制两个LM5114B芯片（MGD_C和MGD_I）的两个VIN输入（P8_45和P8_46，亦即GPIO2_6和GPIO2_27）的电平，观察不同输入组合下LED的亮度。</p>
+<p>结果发现：在P8_45和P8_46都为高电平时，LED最亮；P8_45为高电平，P8_46为低电平时，LED的亮度稍微弱了一些；P8_45为低电平，P8_46为高电平时，LED的亮度更弱；P8_45和P8_46都为低电平时，LED基本不亮，只发出微量的光。</p>
+<p>通过分析电路原理图容易得知：由于LED的负极与GND之间并联了两条放大电路，两条并联电路分别由P8_45和P8_46来控制导通，且除了电阻R4_11和电阻R4_12的阻值不同外，其他部分都相同。由于R4_11为1.8Ω，而R4_12为8.66Ω（电路原理图上为13.6Ω，但BOM表上为8.66Ω，这里我们选择了后者），因此P8_46相比P8_45对LED电流的控制作用较弱，即LED电流主要由R4_11所在的这一路决定。</p>
+<p><img src="E:\Typora_img\测试报告\image-20210122131534417.png" alt="image-20210122131534417"></p>
+<p>在焊接完两个扩展板后，我们对其进行测试的实际过程中，其中一个电路板测试无误，而另外一个经过测试，发现有多处出现了焊接问题，包括电源开关芯片以及所连接的针脚处没焊牢，5.5mm电源接口焊接有问题。另外还发现在给电路板通电后，MOS管冒烟，在替换掉MOS管后，终于整个电路板测试正常。</p>
+<h3 id="组装"><a href="#组装" class="headerlink" title="组装"></a>组装</h3><p>将扩展板的排针插到BBB的对应位置上，完成后效果如图：</p>
+<img src="E:\Typora_img\测试报告\1.jpg" alt="1" style="zoom: 25%;" />
+
+<h2 id="OpenVLC程序测试"><a href="#OpenVLC程序测试" class="headerlink" title="OpenVLC程序测试"></a>OpenVLC程序测试</h2><h3 id="散热问题"><a href="#散热问题" class="headerlink" title="散热问题"></a>散热问题</h3><p>由于LED的散热片没安上，在测试时我们用小风扇来散热。若没有风扇散热，LED通电后会大量发热，温度足以融化绝缘胶。</p>
+<h3 id="汇编RX源代码问题"><a href="#汇编RX源代码问题" class="headerlink" title="汇编RX源代码问题"></a>汇编RX源代码问题</h3><p>在测试时发现RX目录下的pru1_rx.asm文件存在没有将P8_45和P8_46都拉低的问题，这会导致OpenVLC模块在作为TX运行之后再转为RX运行时，会出现LED不灭的情况。通过在pru1_rx.asm文件的START1下添加将P8_45和P8_46电平拉低的语句即可在开启RX时关闭LED。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">START1:</span><br><span class="line">	CLR r30, r30.t0</span><br><span class="line">	CLR r30, r30.t1</span><br></pre></td></tr></table></figure>
+
+<h3 id="测试结果"><a href="#测试结果" class="headerlink" title="测试结果"></a>测试结果</h3><p>TX终端测试结果：</p>
+<img src="E:\Typora_img\测试报告\image-20210122132047497.png" alt="image-20210122132047497" style="zoom:67%;" />
+
+<p>RX终端测试结果：</p>
+<img src="E:\Typora_img\测试报告\image-20210122131918905.png" alt="image-20210122131918905" style="zoom: 80%;" />
+
+<p>通过此次测试，我们验证了TX与RX进行可见光通信的可行性。</p>
+<img src="E:\Typora_img\测试报告\image-20210122131750170.png" alt="image-20210122131750170" style="zoom:50%;" />
+
+<h1 id="后续工作目标"><a href="#后续工作目标" class="headerlink" title="后续工作目标"></a>后续工作目标</h1><ol>
+<li>将LED散热片装好。</li>
+<li>利用OpenVLC平台实现视频的可见光传输。</li>
+</ol>
+</div><div class="article-licensing box"><div class="licensing-title"><p>OpenVLC 可行性测试报告</p><p><a href="https://burgessx.github.io/2021/02/27/OpenVLC/OpenVLC可行性测试报告/">https://burgessx.github.io/2021/02/27/OpenVLC/OpenVLC可行性测试报告/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>BurgessX</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2021-02-27</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2021-02-27</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icon" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a><a class="icon" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a><a class="icon" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/VLC/">VLC</a><a class="link-muted mr-2" rel="tag" href="/tags/Beaglebone/">Beaglebone</a></div><!--!--></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2021/02/27/Linux/Linux%20%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"><span class="level-item">Linux 常用命令</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><div id="comment-container"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.6.2/dist/gitalk.css"><script src="https://cdn.jsdelivr.net/npm/gitalk@1.6.2/dist/gitalk.min.js"></script><script>var gitalk = new Gitalk({
+            id: "2ed5b46c13c62af7835f92a10f15db1a",
+            repo: "burgessx.github.io",
+            owner: "BurgessX",
+            clientID: "cf10be75c391c9cb9545",
+            clientSecret: "9e3d77f6f317597ba6e4286823d09848ce841df2",
+            admin: ["BurgessX"],
+            createIssueManually: false,
+            distractionFreeMode: false,
+            perPage: 20,
+            pagerDirection: "last",
+            
+            
+            enableHotKey: true,
+            language: "zh-CN",
+        })
+        gitalk.render('comment-container')</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="https://avatars.githubusercontent.com/u/52914833?s=400&amp;u=a6dbfe356f8206e4e29a7220973eca2b46fc0ab6&amp;v=4" alt="BurgessX"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">BurgessX</p><p class="is-size-6 is-block">College Student</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Shenzhen, Guangdong, China</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">5</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">0</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">7</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/burgessx" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/burgessx"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Facebook" href="https://facebook.com"><i class="fab fa-facebook"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Twitter" href="https://twitter.com"><i class="fab fa-twitter"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="RSS" href="/"><i class="fas fa-rss"></i></a></div></div></div><!--!--><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">链接</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://hexo.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Hexo</span></span><span class="level-right"><span class="level-item tag">hexo.io</span></span></a></li><li><a class="level is-mobile" href="https://bulma.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Bulma</span></span><span class="level-right"><span class="level-item tag">bulma.io</span></span></a></li><li><a class="level is-mobile" href="https://blog.zhangruipeng.me/hexo-theme-icarus/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Icarus</span></span><span class="level-right"><span class="level-item tag">blog.zhangruipeng.me</span></span></a></li></ul></div></div></div><!--!--><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-02-27T08:56:58.365Z">2021-02-27</time></p><p class="title"><a href="/2021/02/27/OpenVLC/OpenVLC%E5%8F%AF%E8%A1%8C%E6%80%A7%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A/">OpenVLC 可行性测试报告</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-02-27T08:21:41.726Z">2021-02-27</time></p><p class="title"><a href="/2021/02/27/Linux/Linux%20%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">Linux 常用命令</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-02-27T05:49:29.000Z">2021-02-27</time></p><p class="title"><a href="/2021/02/27/Another-new-post/">Another new post</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-02-27T05:42:45.000Z">2021-02-27</time></p><p class="title"><a href="/2021/02/27/New-post-test/">New post test</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-02-26T11:19:49.445Z">2021-02-26</time></p><p class="title"><a href="/2021/02/26/hello-world/">Hello World</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2021/02/"><span class="level-start"><span class="level-item">二月 2021</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/Beaglebone/"><span class="tag">Beaglebone</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Linux/"><span class="tag">Linux</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Test/"><span class="tag">Test</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Test2/"><span class="tag">Test2</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/This-is-a-tag/"><span class="tag">This is a tag</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/VLC/"><span class="tag">VLC</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Vim/"><span class="tag">Vim</span><span class="tag">1</span></a></div></div></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/">BurgessX</a><p class="is-size-7"><span>&copy; 2021 BurgessX</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><script type="text/x-mathjax-config">MathJax.Hub.Config({
+            'HTML-CSS': {
+                matchFontHeight: false
+            },
+            SVG: {
+                matchFontHeight: false
+            },
+            CommonHTML: {
+                matchFontHeight: false
+            },
+            tex2jax: {
+                inlineMath: [
+                    ['$','$'],
+                    ['\\(','\\)']
+                ]
+            }
+        });</script><script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>
