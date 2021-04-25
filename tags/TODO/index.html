@@ -1,573 +1,355 @@
 <!doctype html>
-<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>标签: TODO - BurgessX&#039;s Blog</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="BurgessX&#039;s Blog"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="BurgessX&#039;s Blog"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta property="og:type" content="blog"><meta property="og:title" content="BurgessX&#039;s Blog"><meta property="og:url" content="https://burgessx.github.io/"><meta property="og:site_name" content="BurgessX&#039;s Blog"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://burgessx.github.io/img/og_image.png"><meta property="article:author" content="BurgessX"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://burgessx.github.io"},"headline":"BurgessX's Blog","image":["https://burgessx.github.io/img/og_image.png"],"author":{"@type":"Person","name":"BurgessX"},"description":""}</script><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/github.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 5.4.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/">BurgessX</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><div class="card-content"><nav class="breadcrumb" aria-label="breadcrumbs"><ul><li><a href="/tags">标签</a></li><li class="is-active"><a href="#" aria-current="page">TODO</a></li></ul></nav></div></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2021-03-09T13:46:18.969Z" title="2021/3/9 下午9:46:18">2021-03-09</time>发表</span><span class="level-item"><time dateTime="2021-03-09T15:12:39.683Z" title="2021/3/9 下午11:12:39">2021-03-09</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/CSS/">CSS</a></span><span class="level-item">17 分钟读完 (大约2593个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2021/03/09/2146.html">CSS 学习笔记</a></h1><div class="content"><h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><ul>
-<li><p>CSS 指层叠样式表 (<strong>C</strong>ascading <strong>S</strong>tyle <strong>S</strong>heets)</p>
-</li>
-<li><p>把样式添加到 HTML 4.0 中，是为了<strong>解决内容与表现分离的问题</strong></p>
-</li>
-</ul>
-<h1 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h1><p>CSS 规则由两个主要的部分构成：</p>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>标签: TODO - BurgessX&#039;s Blog</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="BurgessX&#039;s Blog"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="BurgessX&#039;s Blog"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta property="og:type" content="blog"><meta property="og:title" content="BurgessX&#039;s Blog"><meta property="og:url" content="https://burgessx.github.io/"><meta property="og:site_name" content="BurgessX&#039;s Blog"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://burgessx.github.io/img/og_image.png"><meta property="article:author" content="BurgessX"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://burgessx.github.io"},"headline":"BurgessX's Blog","image":["https://burgessx.github.io/img/og_image.png"],"author":{"@type":"Person","name":"BurgessX"},"description":""}</script><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/github.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 5.4.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/">BurgessX</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><div class="card-content"><nav class="breadcrumb" aria-label="breadcrumbs"><ul><li><a href="/tags">标签</a></li><li class="is-active"><a href="#" aria-current="page">TODO</a></li></ul></nav></div></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2021-04-25T04:24:28.870Z" title="2021/4/25 下午12:24:28">2021-04-25</time>发表</span><span class="level-item"><time dateTime="2021-04-25T02:04:15.338Z" title="2021/4/25 上午10:04:15">2021-04-25</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E8%AF%BE%E7%A8%8B/">课程</a></span><span class="level-item">19 分钟读完 (大约2804个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2021/04/25/1224.html">电子技术笔记</a></h1><div class="content"><h1 id="常用半导体元器件"><a href="#常用半导体元器件" class="headerlink" title="常用半导体元器件"></a>常用半导体元器件</h1><h2 id="PN结"><a href="#PN结" class="headerlink" title="PN结"></a>PN结</h2><ul>
+<li><p>P型半导体：在硅（或锗）的晶体中掺入三价元素硼（B）</p>
 <ul>
-<li>选择器：需要改变样式的 HTML 元素</li>
-<li>一条或多条声明：由一个属性和一个值组成</li>
+<li>多数载流子：空穴</li>
+<li>少数载流子：自由电子</li>
 </ul>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span> &#123;<span class="attribute">color</span>:red;<span class="attribute">text-align</span>:center;&#125;	<span class="comment">/*这是个注释*/</span></span><br></pre></td></tr></table></figure>
-
-<p>或</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="attribute">color</span>:red;</span><br><span class="line">    <span class="comment">/*这是个注释*/</span></span><br><span class="line">    <span class="attribute">text-align</span>:center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h2><ul>
-<li><p>分组选择器</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">h1</span>,<span class="selector-tag">h2</span>,<span class="selector-tag">p</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="attribute">color</span>:green;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>嵌套选择器</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="attribute">color</span>:blue;</span><br><span class="line">    <span class="attribute">text-align</span>:center;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.marked</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="attribute">background-color</span>:red;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.marked</span> <span class="selector-tag">p</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="attribute">color</span>:white;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">p</span><span class="selector-class">.marked</span>&#123;</span><br><span class="line">    <span class="attribute">text-decoration</span>:underline;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<li><p>N型半导体：在硅（或锗）的晶体中掺入五价元素磷（P）</p>
+<ul>
+<li>多数载流子：自由电子</li>
+<li>少数载流子：空穴</li>
+</ul>
+</li>
+<li><p>PN结</p>
+<ul>
+<li>原本P型和N型半导体都呈电中性，但多子由于浓度差异产生<strong>扩散作用</strong>，在中间相互中和耗尽，产生方向从N指向P的<strong>内电场</strong>，阻挡多子的扩散作用，少子由于内电场作用产生<strong>漂移运动</strong>，二者达到动态平衡，使中间形成<strong>空间电荷区</strong>（也叫<strong>耗尽层</strong>&lt;多子耗尽&gt;、<strong>阻挡层</strong>&lt;阻挡多子扩散&gt;），即<strong>PN结</strong>。</li>
+<li>外加正向电压<ul>
+<li>外电场方向与内电场方向相反，内电场减弱，空间电荷区变窄</li>
+<li>扩散作用加强，漂移运动减弱</li>
+<li>外加正向电压超过<strong>死区电压</strong>后（可以理解为超过内电场电压），外电路形成较大的<strong>正向电流</strong></li>
+</ul>
+</li>
+<li>外加反向电压<ul>
+<li>外电场方向与内电场方向相同，内电场加强，空间电荷区变宽</li>
+<li>扩散作用减弱，漂移运动加强</li>
+<li>外电路形成较小的<strong>反向电流</strong>，且受温度影响较大</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="二极管"><a href="#二极管" class="headerlink" title="二极管"></a>二极管</h2><h3 id="普通二极管"><a href="#普通二极管" class="headerlink" title="普通二极管"></a>普通二极管</h3><ul>
+<li>伏安特性曲线：</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/burgessx/img-bed@main/blog/20210425100234.png" alt="image-20210322232354331"></p>
+<ul>
+<li><p>反向击穿：<strong>电击穿</strong>可恢复，<strong>热击穿</strong>不可恢复</p>
+</li>
+<li><p>主要参数</p>
+<ul>
+<li>最大整流电流（额定正向平均电流）</li>
+<li>最高反向工作电压：约为反向击穿电压的一半或三分之二</li>
+<li>最大反向电流</li>
+</ul>
+</li>
+</ul>
+<h3 id="稳压二极管"><a href="#稳压二极管" class="headerlink" title="稳压二极管"></a>稳压二极管</h3><ul>
+<li><p>简称<strong>稳压管</strong>，又称<strong>齐纳二极管</strong>。</p>
+</li>
+<li><p>反向特性曲线比普通二极管更陡一些，工作在反向击穿区。</p>
+</li>
+<li><p>主要参数</p>
+<ul>
+<li>稳压电压</li>
+<li>稳定电流和最大稳定电流</li>
+<li>最大耗散功率</li>
+<li>动态电阻</li>
+<li>电压温度系数，有正有负</li>
+</ul>
+</li>
+<li><p>应用</p>
+<ul>
+<li>整流电路：将交流电变为脉动的直流电（反向截止）</li>
+<li>钳位电路：钳制电路某点的电位（正向导通）</li>
+<li>隔离电路：利用二极管截止时电流很小，电路近似于断路（反向截止）</li>
+<li>限幅电路：利用二极管正向导通、反向截止，以及电压源输出恒定电压的特性（正向导通、反向截止）</li>
+<li>稳压电路：利用稳压管稳压（稳压管反向稳压）</li>
+</ul>
+</li>
+</ul>
+<h2 id="三极管"><a href="#三极管" class="headerlink" title="三极管"></a>三极管</h2><h3 id="双极型晶体管（BJT）"><a href="#双极型晶体管（BJT）" class="headerlink" title="双极型晶体管（BJT）"></a>双极型晶体管（BJT）</h3><ul>
+<li><p>半导体三极管分为<strong>双极型晶体管</strong>（Bipolar Junction Transistor，BJT）和<strong>场效应晶体管</strong>两大类。</p>
+</li>
+<li><p>双极型晶体管习惯上简称为<strong>三极管</strong>或<strong>晶体管</strong></p>
+</li>
+<li><p>分类</p>
+<ul>
+<li><p>按组合：NPN型和PNP型</p>
+<img src="https://cdn.jsdelivr.net/gh/burgessx/img-bed@main/blog/20210425100235.png" alt="image-20210323104214291" style="zoom: 67%;" />
+</li>
+<li><p>按封装：直插式和贴片式</p>
+</li>
+</ul>
+</li>
+<li><p>BJT的放大作用的条件</p>
+<ul>
+<li>内部条件：基区很薄且掺杂浓度远低于发射区</li>
+<li>外部条件：发射结正向偏置，集电结反向偏置</li>
+</ul>
+</li>
+<li><p><strong>共发射极</strong>接法下，发射极电流、基极电流、集电极电流的关系：$I_{\mathrm{E}}=I_{\mathrm{C}}+I_{\mathrm{B}}$，$I_{\rm E} \approx I_{\rm C} \gg I_{\rm B}$</p>
+</li>
+<li><p>输入特性曲线</p>
+<img src="https://cdn.jsdelivr.net/gh/burgessx/img-bed@main/blog/20210425100236.png" alt="image-20210323112517640" style="zoom:67%;" />
+</li>
+<li><p>输出特性曲线</p>
+<img src="https://cdn.jsdelivr.net/gh/burgessx/img-bed@main/blog/20210425100237.png" alt="image-20210323112540333" style="zoom:67%;" />
+</li>
+<li><p>三个区域</p>
+<ul>
+<li>放大区：$U_{\rm CE}&gt;U_{\rm BE}$<ul>
+<li>电流情况：集电极电流与基极电流近似成<strong>正比</strong></li>
+<li>偏置情况：发射结处于正向偏置，集电结处于反向偏置</li>
+</ul>
+</li>
+<li>截止区：$U_{\rm BE}\le 0$<ul>
+<li>电流情况：基极电流为零，集电极电流很小</li>
+<li>偏置情况：集电结和发射结均处于反向偏置</li>
+<li>近似等效：此时集电极电流 $I_{\rm CEO}$ 称为<strong>穿透电流</strong>，其值很小，BJT集电极与发射极之间相当于<strong>开路</strong></li>
+</ul>
+</li>
+<li>饱和区：$U_{\rm BE}&gt;U_{\rm CE}$<ul>
+<li>电流情况：基极电流对集电极电流的影响较小，二者不成正比</li>
+<li>偏置情况：集电结与发射结均处于正向偏置</li>
+<li>近似等效：此时集电极与发射极之间的电压 $U_{\rm CES}$ 称为BJT的<strong>饱和压降</strong>，其值很小，BJT集电极与发射极之间相当于<strong>短路</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>简化的小信号模型（近似为电流控制电流源）</p>
+<img src="https://cdn.jsdelivr.net/gh/burgessx/img-bed@main/blog/20210425100238.png" alt="image-20210323122110096" style="zoom:80%;" />
 
 <ul>
-<li><strong>p{ }</strong>: 为所有 <strong>p</strong> 元素指定一个样式。</li>
-<li><strong>.marked{ }</strong>: 为所有 <strong>class=”marked”</strong> 的元素指定一个样式。</li>
-<li><strong>.marked p{ }</strong>: 为所有 <strong>class=”marked”</strong> 元素内的 <strong>p</strong> 元素指定一个样式。</li>
-<li><strong>p.marked{ }</strong>: 为所有 <strong>class=”marked”</strong> 的 <strong>p</strong> 元素指定一个样式。</li>
+<li>只适用于小信号的情况，忽略了 $U_{\rm CE}$ 对 $I_{\rm B}$ 和 $I_{\rm C}$ 的影响</li>
 </ul>
 </li>
 </ul>
-<h1 id="id-和-class"><a href="#id-和-class" class="headerlink" title="id 和 class"></a>id 和 class</h1><h2 id="id"><a href="#id" class="headerlink" title="id"></a>id</h2><p>id 选择器可以为标有特定 id 的 HTML 元素指定特定的样式。</p>
-<p>HTML元素以id属性来设置id选择器,CSS 中 id 选择器以 “#” 来定义。</p>
-<p>以下的样式规则应用于元素属性 id=”para1”:</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#para1</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="attribute">text-align</span>:center;</span><br><span class="line">    <span class="attribute">color</span>:red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="class（类）"><a href="#class（类）" class="headerlink" title="class（类）"></a>class（类）</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span><span class="selector-class">.center</span> &#123;<span class="attribute">text-align</span>:center;&#125;	<span class="comment">/* center就是p的类 */</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="伪类"><a href="#伪类" class="headerlink" title="伪类"></a>伪类</h3><p>CSS伪类是用来添加一些选择器的特殊效果。</p>
-<p>伪类的语法：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">selector:pseudo-class &#123;property:value;&#125;</span><br></pre></td></tr></table></figure>
-
-<p>CSS类也可以使用伪类：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">selector<span class="selector-class">.class</span>:pseudo-class &#123;property:value;&#125;</span><br></pre></td></tr></table></figure>
-
-<table>
-<thead>
-<tr>
-<th align="left">选择器</th>
-<th align="left">示例</th>
-<th align="left">示例说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/sel-checked.html">:checked</a></td>
-<td align="left">input:checked</td>
-<td align="left">选择所有选中的表单元素</td>
-</tr>
-<tr>
-<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/css/cssref/sel-disabled.html">:disabled</a></td>
-<td align="left">input:disabled</td>
-<td align="left">选择所有禁用的表单元素</td>
-</tr>
-<tr>
-<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/sel-empty.html">:empty</a></td>
-<td align="left">p:empty</td>
-<td align="left">选择所有没有子元素的p元素</td>
-</tr>
-<tr>
-<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/sel-enable.html">:enabled</a></td>
-<td align="left">input:enabled</td>
-<td align="left">选择所有启用的表单元素</td>
-</tr>
-<tr>
-<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/sel-first-of-type.html">:first-of-type</a></td>
-<td align="left">p:first-of-type</td>
-<td align="left">选择的每个 p 元素是其父元素的第一个 p 元素</td>
-</tr>
-<tr>
-<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/sel-in-range.html">:in-range</a></td>
-<td align="left">input:in-range</td>
-<td align="left">选择元素指定范围内的值</td>
-</tr>
-<tr>
-<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/sel-invalid.html">:invalid</a></td>
-<td align="left">input:invalid</td>
-<td align="left">选择所有无效的元素</td>
-</tr>
-<tr>
-<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/sel-last-child.html">:last-child</a></td>
-<td align="left">p:last-child</td>
-<td align="left">选择所有p元素的最后一个子元素</td>
-</tr>
-<tr>
-<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/sel-last-of-type.html">:last-of-type</a></td>
-<td align="left">p:last-of-type</td>
-<td align="left">选择每个p元素是其母元素的最后一个p元素</td>
-</tr>
-<tr>
-<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/sel-not.html">:not(selector)</a></td>
-<td align="left">:not(p)</td>
-<td align="left">选择所有p以外的元素</td>
-</tr>
-<tr>
-<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/sel-nth-child.html">:nth-child(n)</a></td>
-<td align="left">p:nth-child(2)</td>
-<td align="left">选择所有 p 元素的父元素的第二个子元素</td>
-</tr>
-<tr>
-<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/sel-nth-last-child.html">:nth-last-child(n)</a></td>
-<td align="left">p:nth-last-child(2)</td>
-<td align="left">选择所有p元素倒数的第二个子元素</td>
-</tr>
-<tr>
-<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/sel-nth-last-of-type.html">:nth-last-of-type(n)</a></td>
-<td align="left">p:nth-last-of-type(2)</td>
-<td align="left">选择所有p元素倒数的第二个为p的子元素</td>
-</tr>
-<tr>
-<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/sel-nth-of-type.html">:nth-of-type(n)</a></td>
-<td align="left">p:nth-of-type(2)</td>
-<td align="left">选择所有p元素第二个为p的子元素</td>
-</tr>
-<tr>
-<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/sel-only-of-type.html">:only-of-type</a></td>
-<td align="left">p:only-of-type</td>
-<td align="left">选择所有仅有一个子元素为p的元素</td>
-</tr>
-<tr>
-<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/sel-only-child.html">:only-child</a></td>
-<td align="left">p:only-child</td>
-<td align="left">选择所有仅有一个子元素的p元素</td>
-</tr>
-<tr>
-<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/sel-optional.html">:optional</a></td>
-<td align="left">input:optional</td>
-<td align="left">选择没有”required”的元素属性</td>
-</tr>
-<tr>
-<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/sel-out-of-range.html">:out-of-range</a></td>
-<td align="left">input:out-of-range</td>
-<td align="left">选择指定范围以外的值的元素属性</td>
-</tr>
-<tr>
-<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/sel-read-only.html">:read-only</a></td>
-<td align="left">input:read-only</td>
-<td align="left">选择只读属性的元素属性</td>
-</tr>
-<tr>
-<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/sel-read-write.html">:read-write</a></td>
-<td align="left">input:read-write</td>
-<td align="left">选择没有只读属性的元素属性</td>
-</tr>
-<tr>
-<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/sel-required.html">:required</a></td>
-<td align="left">input:required</td>
-<td align="left">选择有”required”属性指定的元素属性</td>
-</tr>
-<tr>
-<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/sel-root.html">:root</a></td>
-<td align="left">root</td>
-<td align="left">选择文档的根元素</td>
-</tr>
-<tr>
-<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/sel-target.html">:target</a></td>
-<td align="left">#news:target</td>
-<td align="left">选择当前活动#news元素(点击URL包含锚的名字)</td>
-</tr>
-<tr>
-<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/sel-valid.html">:valid</a></td>
-<td align="left">input:valid</td>
-<td align="left">选择所有有效值的属性</td>
-</tr>
-<tr>
-<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/sel-link.html">:link</a></td>
-<td align="left">a:link</td>
-<td align="left">选择所有未访问链接</td>
-</tr>
-<tr>
-<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/sel-visited.html">:visited</a></td>
-<td align="left">a:visited</td>
-<td align="left">选择所有访问过的链接</td>
-</tr>
-<tr>
-<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/sel-active.html">:active</a></td>
-<td align="left">a:active</td>
-<td align="left">选择正在活动链接</td>
-</tr>
-<tr>
-<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/sel-hover.html">:hover</a></td>
-<td align="left">a:hover</td>
-<td align="left">把鼠标放在链接上的状态</td>
-</tr>
-<tr>
-<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/sel-focus.html">:focus</a></td>
-<td align="left">input:focus</td>
-<td align="left">选择元素输入后具有焦点</td>
-</tr>
-<tr>
-<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/sel-firstletter.html">:first-letter</a></td>
-<td align="left">p:first-letter</td>
-<td align="left">选择每个<p> 元素的第一个字母</td>
-</tr>
-<tr>
-<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/sel-firstline.html">:first-line</a></td>
-<td align="left">p:first-line</td>
-<td align="left">选择每个<p> 元素的第一行</td>
-</tr>
-<tr>
-<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/sel-firstchild.html">:first-child</a></td>
-<td align="left">p:first-child</td>
-<td align="left">选择器匹配属于任意元素的第一个子元素的 <p> 元素</td>
-</tr>
-<tr>
-<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/sel-before.html">:before</a></td>
-<td align="left">p:before</td>
-<td align="left">在每个<p>元素之前插入内容</td>
-</tr>
-<tr>
-<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/sel-after.html">:after</a></td>
-<td align="left">p:after</td>
-<td align="left">在每个<p>元素之后插入内容</td>
-</tr>
-<tr>
-<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/sel-lang.html">:lang(<em>language</em>)</a></td>
-<td align="left">p:lang(it)</td>
-<td align="left">为<p>元素的lang属性选择一个开始值</td>
-</tr>
-</tbody></table>
-<h1 id="CSS-样式表"><a href="#CSS-样式表" class="headerlink" title="CSS 样式表"></a>CSS 样式表</h1><h2 id="外部样式表"><a href="#外部样式表" class="headerlink" title="外部样式表"></a>外部样式表</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span> <span class="attr">href</span>=<span class="string">&quot;mystyle.css&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="内部样式表"><a href="#内部样式表" class="headerlink" title="内部样式表"></a>内部样式表</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">hr &#123;<span class="attribute">color</span>:sienna;&#125;</span></span><br><span class="line"><span class="css"><span class="selector-tag">p</span> &#123;<span class="attribute">margin-left</span>:<span class="number">20px</span>;&#125;</span></span><br><span class="line"><span class="css"><span class="selector-tag">body</span> &#123;<span class="attribute">background-image</span>:<span class="built_in">url</span>(<span class="string">&quot;images/back40.gif&quot;</span>);&#125;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="内联样式表"><a href="#内联样式表" class="headerlink" title="内联样式表"></a>内联样式表</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;color:sienna;margin-left:20px&quot;</span>&gt;</span>这是一个段落。<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="多重样式优先级"><a href="#多重样式优先级" class="headerlink" title="多重样式优先级"></a>多重样式优先级</h2><p><strong>（内联样式）Inline style &gt; （内部样式）Internal style sheet &gt;（外部样式）External style sheet &gt; 浏览器默认样式</strong></p>
-<p>注意：如果外部样式放在内部样式的后面，则外部样式将覆盖内部样式。</p>
-<h1 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h1><h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">h1</span> &#123;<span class="attribute">background-color</span>:<span class="number">#6495ed</span>;&#125;</span><br><span class="line"><span class="selector-tag">p</span> &#123;<span class="attribute">background-color</span>:<span class="number">#e0ffff</span>;&#125;</span><br><span class="line"><span class="selector-tag">div</span> &#123;<span class="attribute">background-color</span>:<span class="number">#b0c4de</span>;&#125;</span><br></pre></td></tr></table></figure>
-
-<table>
-<thead>
-<tr>
-<th align="left">Property</th>
-<th align="left">描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/css3-pr-background.html">background</a></td>
-<td align="left">简写属性，作用是将背景属性设置在一个声明中。</td>
-</tr>
-<tr>
-<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/pr-background-attachment.html">background-attachment</a></td>
-<td align="left">背景图像是否固定或者随着页面的其余部分滚动。</td>
-</tr>
-<tr>
-<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/pr-background-color.html">background-color</a></td>
-<td align="left">设置元素的背景颜色。</td>
-</tr>
-<tr>
-<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/pr-background-image.html">background-image</a></td>
-<td align="left">把图像设置为背景。</td>
-</tr>
-<tr>
-<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/pr-background-position.html">background-position</a></td>
-<td align="left">设置背景图像的起始位置。</td>
-</tr>
-<tr>
-<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/pr-background-repeat.html">background-repeat</a></td>
-<td align="left">设置背景图像是否及如何重复。</td>
-</tr>
-</tbody></table>
-<h2 id="文本"><a href="#文本" class="headerlink" title="文本"></a>文本</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 文本颜色 */</span></span><br><span class="line"><span class="selector-tag">body</span> &#123;<span class="attribute">color</span>:red;&#125;</span><br><span class="line"><span class="selector-tag">h1</span> &#123;<span class="attribute">color</span>:<span class="number">#00ff00</span>;&#125;</span><br><span class="line"><span class="selector-tag">h2</span> &#123;<span class="attribute">color</span>:<span class="built_in">rgb</span>(<span class="number">255</span>,<span class="number">0</span>,<span class="number">0</span>);&#125;</span><br><span class="line"><span class="comment">/* 文本对齐方式 */</span></span><br><span class="line"><span class="selector-tag">h1</span> &#123;<span class="attribute">text-align</span>:center;&#125;</span><br><span class="line"><span class="selector-tag">p</span><span class="selector-class">.date</span> &#123;<span class="attribute">text-align</span><span class="selector-pseudo">:right</span>;&#125;</span><br><span class="line"><span class="selector-tag">p</span><span class="selector-class">.main</span> &#123;<span class="attribute">text-align</span>:justify;&#125;</span><br><span class="line"><span class="comment">/* 文本修饰 */</span></span><br><span class="line"><span class="selector-tag">a</span> &#123;<span class="attribute">text-decoration</span>:none;&#125;</span><br><span class="line"><span class="selector-tag">h1</span> &#123;<span class="attribute">text-decoration</span>:overline;&#125;</span><br><span class="line"><span class="selector-tag">h2</span> &#123;<span class="attribute">text-decoration</span>:line-through;&#125;</span><br><span class="line"><span class="selector-tag">h3</span> &#123;<span class="attribute">text-decoration</span>:underline;&#125;</span><br><span class="line"><span class="comment">/* 文本大小写 */</span></span><br><span class="line"><span class="selector-tag">p</span><span class="selector-class">.uppercase</span> &#123;<span class="attribute">text-transform</span>:uppercase;&#125;</span><br><span class="line"><span class="selector-tag">p</span><span class="selector-class">.lowercase</span> &#123;<span class="attribute">text-transform</span>:lowercase;&#125;</span><br><span class="line"><span class="selector-tag">p</span><span class="selector-class">.capitalize</span> &#123;<span class="attribute">text-transform</span>:capitalize;&#125;</span><br><span class="line"><span class="comment">/* 文本缩进 */</span></span><br><span class="line"><span class="selector-tag">p</span> &#123;<span class="attribute">text-indent</span>:<span class="number">50px</span>;&#125;</span><br></pre></td></tr></table></figure>
-
-<table>
-<thead>
-<tr>
-<th align="left">属性</th>
-<th align="left">描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/pr-text-color.html">color</a></td>
-<td align="left">设置文本颜色</td>
-</tr>
-<tr>
-<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/pr-text-direction.html">direction</a></td>
-<td align="left">设置文本方向。</td>
-</tr>
-<tr>
-<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/pr-text-letter-spacing.html">letter-spacing</a></td>
-<td align="left">设置字符间距</td>
-</tr>
-<tr>
-<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/pr-dim-line-height.html">line-height</a></td>
-<td align="left">设置行高</td>
-</tr>
-<tr>
-<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/pr-text-text-align.html">text-align</a></td>
-<td align="left">对齐元素中的文本</td>
-</tr>
-<tr>
-<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/pr-text-text-decoration.html">text-decoration</a></td>
-<td align="left">向文本添加修饰</td>
-</tr>
-<tr>
-<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/pr-text-text-indent.html">text-indent</a></td>
-<td align="left">缩进元素中文本的首行</td>
-</tr>
-<tr>
-<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/css3-pr-text-shadow.html">text-shadow</a></td>
-<td align="left">设置文本阴影</td>
-</tr>
-<tr>
-<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/pr-text-text-transform.html">text-transform</a></td>
-<td align="left">控制元素中的字母</td>
-</tr>
-<tr>
-<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/pr-text-unicode-bidi.html">unicode-bidi</a></td>
-<td align="left">设置或返回文本是否被重写</td>
-</tr>
-<tr>
-<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/pr-pos-vertical-align.html">vertical-align</a></td>
-<td align="left">设置元素的垂直对齐</td>
-</tr>
-<tr>
-<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/pr-text-white-space.html">white-space</a></td>
-<td align="left">设置元素中空白的处理方式</td>
-</tr>
-<tr>
-<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/pr-text-word-spacing.html">word-spacing</a></td>
-<td align="left">设置字间距</td>
-</tr>
-</tbody></table>
-<h2 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span><span class="selector-class">.normal</span> &#123;<span class="attribute">font-style</span>:normal;&#125;</span><br><span class="line"><span class="selector-tag">p</span><span class="selector-class">.italic</span> &#123;<span class="attribute">font-style</span>:italic;&#125;</span><br><span class="line"><span class="selector-tag">p</span><span class="selector-class">.oblique</span> &#123;<span class="attribute">font-style</span>:oblique;&#125;</span><br><span class="line"><span class="selector-tag">body</span> &#123;<span class="attribute">font-size</span>:<span class="number">100%</span>;&#125;</span><br><span class="line"><span class="selector-tag">h1</span> &#123;<span class="attribute">font-size</span>:<span class="number">2.5em</span>;&#125;</span><br><span class="line"><span class="selector-tag">h2</span> &#123;<span class="attribute">font-size</span>:<span class="number">1.875em</span>;&#125;</span><br><span class="line"><span class="selector-tag">p</span> &#123;<span class="attribute">font-size</span>:<span class="number">0.875em</span>;&#125;</span><br></pre></td></tr></table></figure>
-
-<table>
-<thead>
-<tr>
-<th align="left">Property</th>
-<th align="left">描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/pr-font-font.html">font</a></td>
-<td align="left">在一个声明中设置所有的字体属性</td>
-</tr>
-<tr>
-<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/pr-font-font-family.html">font-family</a></td>
-<td align="left">指定文本的字体系列</td>
-</tr>
-<tr>
-<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/pr-font-font-size.html">font-size</a></td>
-<td align="left">指定文本的字体大小</td>
-</tr>
-<tr>
-<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/pr-font-font-style.html">font-style</a></td>
-<td align="left">指定文本的字体样式</td>
-</tr>
-<tr>
-<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/pr-font-font-variant.html">font-variant</a></td>
-<td align="left">以小型大写字体或者正常字体显示文本。</td>
-</tr>
-<tr>
-<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/pr-font-weight.html">font-weight</a></td>
-<td align="left">指定字体的粗细。</td>
-</tr>
-</tbody></table>
-<h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:link</span> &#123;<span class="attribute">color</span>:<span class="number">#000000</span>;&#125;      <span class="comment">/* 未访问链接*/</span></span><br><span class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:visited</span> &#123;<span class="attribute">color</span>:<span class="number">#00FF00</span>;&#125;  <span class="comment">/* 已访问链接 */</span></span><br><span class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:hover</span> &#123;<span class="attribute">color</span>:<span class="number">#FF00FF</span>;&#125;  <span class="comment">/* 鼠标移动到链接上 */</span></span><br><span class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:active</span> &#123;<span class="attribute">color</span>:<span class="number">#0000FF</span>;&#125;  <span class="comment">/* 鼠标点击时 */</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">ul</span><span class="selector-class">.a</span> &#123;<span class="attribute">list-style-type</span>: circle;&#125;</span><br><span class="line"><span class="selector-tag">ul</span><span class="selector-class">.b</span> &#123;<span class="attribute">list-style-type</span>: square;&#125;</span><br><span class="line"> </span><br><span class="line"><span class="selector-tag">ol</span><span class="selector-class">.c</span> &#123;<span class="attribute">list-style-type</span>: upper-roman;&#125;</span><br><span class="line"><span class="selector-tag">ol</span><span class="selector-class">.d</span> &#123;<span class="attribute">list-style-type</span>: lower-alpha;&#125;</span><br></pre></td></tr></table></figure>
-
-<p>可以按顺序设置如下属性：</p>
+<h3 id="场效应晶体管"><a href="#场效应晶体管" class="headerlink" title="场效应晶体管"></a>场效应晶体管</h3><ul>
+<li><p>场效应管（Field Effect Transistor，FET）是利用外加电压产生的电场强度来控制其导电能力的一种半导体器件。  </p>
+</li>
+<li><p>分类</p>
 <ul>
-<li>list-style-type</li>
-<li>list-style-position</li>
-<li>list-style-image</li>
+<li>按结构分：<strong>结型场效应晶体管</strong>、<strong>绝缘栅型场效应晶体管</strong>（又称为金属氧化物半导体场效应管，Metal Oxide Semiconductor FET，<strong>MOSFET</strong>）</li>
 </ul>
-<p>如果上述值丢失一个，其余仍在指定的顺序，就没关系。</p>
-<h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">table</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="attribute">border-collapse</span>:collapse;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">table</span>,<span class="selector-tag">th</span>, <span class="selector-tag">td</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">1px</span> solid black;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="盒子"><a href="#盒子" class="headerlink" title="盒子"></a>盒子</h2><p>![CSS box-model](E:\Typora_img\CSS 学习笔记\box-model.gif)</p>
+</li>
+<li><p>绝缘栅型场效应晶体管（也叫<strong>单极型晶体管</strong>）</p>
 <ul>
-<li><strong>Margin(外边距)</strong> - 清除边框外的区域，外边距是透明的。</li>
-<li><strong>Border(边框)</strong> - 围绕在内边距和内容外的边框。</li>
-<li><strong>Padding(内边距)</strong> - 清除内容周围的区域，内边距是透明的。</li>
-<li><strong>Content(内容)</strong> - 盒子的内容，显示文本和图像。</li>
-</ul>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">300px</span>;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">25px</span> solid green;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">25px</span>;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">25px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="尺寸"><a href="#尺寸" class="headerlink" title="尺寸"></a>尺寸</h2><table>
-<thead>
-<tr>
-<th align="left">属性</th>
-<th align="left">描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/pr-dim-height.html">height</a></td>
-<td align="left">设置元素的高度。</td>
-</tr>
-<tr>
-<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/pr-dim-line-height.html">line-height</a></td>
-<td align="left">设置行高。</td>
-</tr>
-<tr>
-<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/pr-dim-max-height.html">max-height</a></td>
-<td align="left">设置元素的最大高度。</td>
-</tr>
-<tr>
-<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/pr-dim-max-width.html">max-width</a></td>
-<td align="left">设置元素的最大宽度。</td>
-</tr>
-<tr>
-<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/pr-dim-min-height.html">min-height</a></td>
-<td align="left">设置元素的最小高度。</td>
-</tr>
-<tr>
-<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/pr-dim-min-width.html">min-width</a></td>
-<td align="left">设置元素的最小宽度。</td>
-</tr>
-<tr>
-<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/pr-dim-width.html">width</a></td>
-<td align="left">设置元素的宽度。</td>
-</tr>
-</tbody></table>
-<h2 id="可见性"><a href="#可见性" class="headerlink" title="可见性"></a>可见性</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">h1</span><span class="selector-class">.hidden</span> &#123;<span class="attribute">visibility</span>:hidden;&#125;	<span class="comment">/* 会占空间 */</span></span><br><span class="line"><span class="selector-tag">h1</span><span class="selector-class">.hidden</span> &#123;<span class="attribute">display</span>:none;&#125;		<span class="comment">/* 不会占空间 */</span></span><br><span class="line"><span class="selector-tag">li</span> &#123;<span class="attribute">display</span>:inline;&#125;			<span class="comment">/* 把列表项显示为内联元素 */</span></span><br><span class="line"><span class="selector-tag">span</span> &#123;<span class="attribute">display</span>:block;&#125;			<span class="comment">/* 把span元素作为块元素 */</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h2><p>position 属性的五个值：</p>
+<li><p>分类</p>
 <ul>
-<li><p>static</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span><span class="selector-class">.static</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: static;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">3px</span> solid <span class="number">#73AD21</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<li><p>N沟道和P沟道</p>
 </li>
-<li><p>relative</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">h2</span><span class="selector-class">.pos_left</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="attribute">position</span>:relative;</span><br><span class="line">    <span class="attribute">left</span>:-<span class="number">20px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>fixed</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span><span class="selector-class">.pos_fixed</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="attribute">position</span>:fixed;</span><br><span class="line">    <span class="attribute">top</span>:<span class="number">30px</span>;</span><br><span class="line">    <span class="attribute">right</span>:<span class="number">5px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>absolute</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">h2</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="attribute">position</span>:absolute;</span><br><span class="line">    <span class="attribute">left</span>:<span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">top</span>:<span class="number">150px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>sticky</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span><span class="selector-class">.sticky</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: -webkit-sticky; <span class="comment">/* Safari */</span></span><br><span class="line">    <span class="attribute">position</span>: sticky;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: green;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">2px</span> solid <span class="number">#4CAF50</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
+<li><p>增强型和耗尽型。耗尽型有原始沟道，增强型没有，需要外加电压。因此，如果要判别一个没有型号的 MOSFET 是增强型还是耗尽型，只要检查它在零栅压下，在漏、源极间加电压时是否能导通，就可作出判别。</p>
+ <img src="https://cdn.jsdelivr.net/gh/burgessx/img-bed@main/blog/20210425100239.png" alt="image-20210323194518485" style="zoom:80%;" />
+![image-20210323195305867](https://cdn.jsdelivr.net/gh/burgessx/img-bed@main/blog/20210425100240.png)
 </li>
 </ul>
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2021-03-09T13:42:02.853Z" title="2021/3/9 下午9:42:02">2021-03-09</time>发表</span><span class="level-item"><time dateTime="2021-03-10T14:18:18.634Z" title="2021/3/10 下午10:18:18">2021-03-10</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/XML/">XML</a></span><span class="level-item">7 分钟读完 (大约1087个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2021/03/09/2142.html">XML 学习笔记</a></h1><div class="content"><h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>XML 指可扩展标记语言（e<strong>X</strong>tensible <strong>M</strong>arkup <strong>L</strong>anguage）。</p>
-<p>XML 是一种很像HTML的标记语言。</p>
-<p>XML 被设计用来传输和存储数据，而 HTML 被设计用来显示数据。</p>
-<p>XML 很重要，也很容易学习。</p>
-<p>XML 被设计为具有自我描述性。</p>
-<p>XML 是 W3C 的推荐标准。</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">note</span>&gt;</span><span class="comment">&lt;!-- This is a comment --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">to</span>&gt;</span>Tove<span class="tag">&lt;/<span class="name">to</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">from</span>&gt;</span>Jani<span class="tag">&lt;/<span class="name">from</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">heading</span>&gt;</span>Reminder<span class="tag">&lt;/<span class="name">heading</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span>Don&#x27;t forget me this weekend!<span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">note</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>原理：以共源极电路为例，MOSFET 利用电场效应改变导电沟道的宽度来控制漏极电流的大小</p>
+<p><img src="https://cdn.jsdelivr.net/gh/burgessx/img-bed@main/blog/20210425100241.png" alt="image-20210323200355428"></p>
+</li>
+<li><p>特性曲线</p>
+<ul>
+<li>N沟道增强型 MOSFET</li>
+</ul>
+<img src="https://cdn.jsdelivr.net/gh/burgessx/img-bed@main/blog/20210425100242.png" alt="image-20210323200809709" style="zoom:80%;" />
 
-<p>XML 语言没有预定义的标签。</p>
-<p>HTML 中使用的标签都是预定义的。HTML 文档只能使用在 HTML 标准中定义过的标签（如 <p>、<h1> 等等）。</p>
-<h1 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h1><ul>
-<li><p>XML 文档必须包含<strong>根元素</strong>。该元素是所有其他元素的父元素。</p>
-<p>XML 文档中的元素形成了一棵文档树。这棵树从根部开始，并扩展到树的最底端。</p>
+<ul>
+<li><p>N沟道耗尽型 MOSFET</p>
+<img src="https://cdn.jsdelivr.net/gh/burgessx/img-bed@main/blog/20210425100243.png" alt="image-20210323201722738" style="zoom:80%;" />
 </li>
-<li><p>所有的元素都可以有子元素</p>
+</ul>
 </li>
-<li><p>XML 声明文件的可选部分，如果存在需要放在文档的第一行</p>
+<li><p>三个区域</p>
+<ul>
+<li>可变电阻区：等效为一个可变电阻</li>
+<li>线性放大区（恒流区）：$I_{\rm D}$ 随 $U_{\rm GS}$ 的增大而增大</li>
+<li>击穿区：漏区与衬底间的PN结被反向击穿</li>
+</ul>
 </li>
-<li><p>所有的 XML 元素都必须有一个关闭标签</p>
-<p>在 HTML 中，某些元素不必有一个关闭标签，比如：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>This is a paragraph.</span><br><span class="line"><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<li><p>主要参数</p>
+<ul>
+<li>增强型：开启电压</li>
+<li>耗尽型：夹断电压、饱和漏极电流</li>
+<li>共同参数<ul>
+<li>最大漏-源极击穿电压</li>
+<li>栅-源直流输入电阻：在漏、源两极短路的情况下，外加栅-源直流电压与栅极直流电流的比值。</li>
+<li>栅-源击穿电压</li>
+<li>最大漏极电流和最大耗散功率</li>
+<li>低频跨导 $g_{\mathrm{m}}=\left.\frac{\Delta I_{\mathrm{D}}}{\Delta U_{\mathrm{GS}}}\right|<em>{U</em>{\mathrm{DS}}={\text 常数}}$</li>
+</ul>
 </li>
-<li><p>XML 标签对大小写敏感</p>
+</ul>
 </li>
-<li><p>XML 属性值必须加引号（单引号、双引号均可）</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">note</span> <span class="attr">date</span>=<span class="string">&quot;12/11/2007&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">to</span>&gt;</span>Tove<span class="tag">&lt;/<span class="name">to</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">from</span>&gt;</span>Jani<span class="tag">&lt;/<span class="name">from</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">note</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<li><p>小信号模型（近似为电压控制电流源）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/burgessx/img-bed@main/blog/20210425100244.png" alt="image-20210323204509526"></p>
 </li>
-<li><p><code>&lt;</code> 和 <code>&amp;</code> 非法，可用“实体引用”解决</p>
-<table>
-<thead>
-<tr>
-<th>实体引用</th>
-<th>符号</th>
-<th>含义</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>&amp;lt;</code></td>
-<td>&lt;</td>
-<td>less than</td>
-</tr>
-<tr>
-<td><code>&amp;gt;</code></td>
-<td>&gt;</td>
-<td>greater than</td>
-</tr>
-<tr>
-<td><code>&amp;amp;</code></td>
-<td>&amp;</td>
-<td>ampersand</td>
-</tr>
-<tr>
-<td><code>&amp;apos;</code></td>
-<td>‘</td>
-<td>apostrophe</td>
-</tr>
-<tr>
-<td><code>&amp;quot;</code></td>
-<td>“</td>
-<td>quotation mark</td>
-</tr>
-</tbody></table>
+</ul>
+</li>
+</ul>
+<h2 id="半导体光电器件"><a href="#半导体光电器件" class="headerlink" title="半导体光电器件"></a>半导体光电器件</h2><ul>
+<li>半导体光电器件的原理：在光照作用下，照射光中的光子能够破坏半导体晶体的共价键，释放出电子；在电<br>场作用下，电子与空穴复合发出的能量也能以一定波长的光的形式辐射。  </li>
+</ul>
+<h3 id="发光二极管"><a href="#发光二极管" class="headerlink" title="发光二极管"></a>发光二极管</h3><ul>
+<li>发光二极管相比普通二极管，它的PN结面做得比较宽，半导体材料的掺杂浓度也比普通二极管高得多。</li>
+<li>分类：直插式、贴片式  </li>
+</ul>
+<h3 id="光电二极管"><a href="#光电二极管" class="headerlink" title="光电二极管"></a>光电二极管</h3><ul>
+<li><p>注意：使用光电二极管时，应<strong>反向</strong>接入电路</p>
+</li>
+<li><p>主要参数</p>
+<ul>
+<li>暗电流：无光照时的反向饱和电流</li>
+<li>光电流：额定照度下的反向电流</li>
+<li>灵敏度：在给定波长的光照下，单位光功率产生的光电流</li>
+<li>峰值波长：使光电二极管具有最大响应灵敏度的光的波长</li>
+<li>响应时间：指加定量光照后，光电流达到稳定值的 60% 所需的时间</li>
+</ul>
 <blockquote>
-<p><strong>注：</strong>在 XML 中，只有字符 “&lt;” 和 “&amp;” 确实是非法的。大于号是合法的，但是用实体引用来代替它是一个好习惯。</p>
+<p>注意：光电二极管的暗电流随温度变化而变化，因此，对稳定性要求较高的电路，需要考虑进行温度补偿。</p>
 </blockquote>
 </li>
-<li><p>在 XML 中，文档中的空格不会被删减。</p>
+</ul>
+<h3 id="双极型光电晶体管"><a href="#双极型光电晶体管" class="headerlink" title="双极型光电晶体管"></a>双极型光电晶体管</h3><ul>
+<li><p>又称光电三极管</p>
 </li>
-<li><p>XML 以 LF 存储换行。</p>
-<blockquote>
-<p>在 Windows 应用程序中，换行通常以一对字符来存储：回车符（CR）和换行符（LF）。</p>
-<p>在 Unix 和 Mac OSX 中，使用 LF 来存储新行。</p>
-<p>在旧的 Mac 系统中，使用 CR 来存储新行。</p>
-</blockquote>
-</li>
-<li><p>XML 元素必须遵循以下命名规则：</p>
+<li><p>分类</p>
 <ul>
-<li>名称可以包含字母、数字以及其他的字符</li>
-<li>名称不能以数字或者标点符号开始</li>
-<li>名称不能以字母 xml（或者 XML、Xml 等等）开始</li>
-<li>名称不能包含空格</li>
-<li>可使用任何名称，没有保留的字词。</li>
+<li>按管脚数：三引脚、两引脚</li>
+</ul>
+</li>
+<li><p>等效</p>
+<p><img src="https://cdn.jsdelivr.net/gh/burgessx/img-bed@main/blog/20210425100245.png" alt="image-20210323152141351"></p>
+</li>
+</ul>
+<h3 id="光电耦合器"><a href="#光电耦合器" class="headerlink" title="光电耦合器"></a>光电耦合器</h3><ul>
+<li>简称<strong>光耦</strong>，又称光电隔离器。</li>
+<li>原理图</li>
+</ul>
+<img src="https://cdn.jsdelivr.net/gh/burgessx/img-bed@main/blog/20210425100246.png" alt="image-20210323152422618" style="zoom:67%;" />
+
+<h1 id="基本放大电路"><a href="#基本放大电路" class="headerlink" title="基本放大电路"></a>基本放大电路</h1><h2 id="共射极放大电路"><a href="#共射极放大电路" class="headerlink" title="共射极放大电路"></a>共射极放大电路</h2><p><img src="https://cdn.jsdelivr.net/gh/burgessx/img-bed@main/blog/20210425100247.png" alt="image-20210323155534181"></p>
+<ul>
+<li><p>输入电路图解</p>
+<img src="https://cdn.jsdelivr.net/gh/burgessx/img-bed@main/blog/20210425100248.png" alt="image-20210323161136090" style="zoom:80%;" />
+</li>
+<li><p>输出电路图解</p>
+<img src="https://cdn.jsdelivr.net/gh/burgessx/img-bed@main/blog/20210425100249.png" alt="image-20210323161200568" style="zoom:80%;" />
+
+</li>
+</ul>
+<h3 id="静态分析"><a href="#静态分析" class="headerlink" title="静态分析"></a>静态分析</h3><ul>
+<li><p>静态工作点的选择：避免<strong>截止失真</strong>和<strong>饱和失真</strong></p>
+</li>
+<li><p>稳定静态工作点</p>
+<ul>
+<li><p>使用<strong>分压式偏置共射极放大电路</strong></p>
+<img src="https://cdn.jsdelivr.net/gh/burgessx/img-bed@main/blog/20210425100250.png" alt="image-20210323163948089" style="zoom:80%;" />
+其中 $C_{\rm E}$ 为**旁路电容**，使 $R_{\rm E}$ 只对直流分量 $I_{\rm C}$ 有稳定作用。
+</li>
+<li><p>稳定静态工作点的过程</p>
+</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/burgessx/img-bed@main/blog/20210425100251.png" alt="image-20210323164014103"></p>
+</li>
+</ul>
+<h3 id="动态分析"><a href="#动态分析" class="headerlink" title="动态分析"></a>动态分析</h3><ul>
+<li><p>放大电路的主要性能指标</p>
+<ul>
+<li>放大倍数（增益）</li>
+<li>输入电阻<ul>
+<li>对于信号源而言，放大电路相当于它的负载，输入电阻即为负载的阻值</li>
+<li>为减小信号损失，一般要求放大电路的输入电阻大一些好</li>
+</ul>
+</li>
+<li>输出电阻<ul>
+<li>对负载而言，放大电路相当于一个电压源，输出电阻即为电压源的内阻</li>
+</ul>
+</li>
+<li>为增大带负载的能力，一般要求放大电路的输出电阻小一些好</li>
+</ul>
+</li>
+<li><p>微变等效电路</p>
+<ul>
+<li><p>画法：首先要画出放大电路的交流通路，然后再将BJT用它的小信号模型来替代。  </p>
+<p>以固定式偏置共射极放大电路为例：</p>
+<img src="https://cdn.jsdelivr.net/gh/burgessx/img-bed@main/blog/20210425100252.png" alt="image-20210323172827618" style="zoom:80%;" />
+
+<p><img src="https://cdn.jsdelivr.net/gh/burgessx/img-bed@main/blog/20210425100253.png" alt="image-20210323172745807"></p>
+</li>
 </ul>
 </li>
 </ul>
-<h1 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h1><p>属性通常提供不属于数据组成部分的信息。在下面的实例中，文件类型与数据无关，但是对需要处理这个元素的软件来说却很重要：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">file</span> <span class="attr">type</span>=<span class="string">&quot;gif&quot;</span>&gt;</span>computer.gif<span class="tag">&lt;/<span class="name">file</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="共集电极放大电路"><a href="#共集电极放大电路" class="headerlink" title="共集电极放大电路"></a>共集电极放大电路</h2><p><img src="https://cdn.jsdelivr.net/gh/burgessx/img-bed@main/blog/20210425100254.png" alt="image-20210323173840119"></p>
+<h2 id="场效应晶体管共源极放大电路"><a href="#场效应晶体管共源极放大电路" class="headerlink" title="场效应晶体管共源极放大电路"></a>场效应晶体管共源极放大电路</h2><h3 id="静态分析-1"><a href="#静态分析-1" class="headerlink" title="静态分析"></a>静态分析</h3><ul>
+<li><p>BJT 是电流控制型器件，放大电路依靠调整基极电流 $I_{\rm B}$ 来获得合适的静态工作点；MOSFET 是电压控制型器件，放大电路的静态工作点由栅-源电压 $U_{\rm GS}$ 决定。  </p>
+</li>
+<li><p>偏置电路形式</p>
+<ul>
+<li><p>自给式偏置：用于耗尽型 MOSFET</p>
+<p><img src="https://cdn.jsdelivr.net/gh/burgessx/img-bed@main/blog/20210425100255.png" alt="image-20210323221242137"></p>
+</li>
+<li><p>分压式偏置：用于增强型 MOSFET 或耗尽型 MOSFET</p>
+<p><img src="https://cdn.jsdelivr.net/gh/burgessx/img-bed@main/blog/20210425100256.png" alt="image-20210323221255323"></p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="动态分析-1"><a href="#动态分析-1" class="headerlink" title="动态分析"></a>动态分析</h3><p>以分压式偏置共源极放大电路为例</p>
+<ul>
+<li>微变等效电路<br><img src="https://cdn.jsdelivr.net/gh/burgessx/img-bed@main/blog/20210425100257.png" alt="image-20210323221310544"></li>
+</ul>
+<h1 id="集成运算放大器"><a href="#集成运算放大器" class="headerlink" title="集成运算放大器"></a>集成运算放大器</h1><ul>
+<li>内部电路组成框图</li>
+</ul>
+<img src="https://cdn.jsdelivr.net/gh/burgessx/img-bed@main/blog/20210425100258.png" alt="image-20210323223017094" style="zoom:80%;" />
 
-<p>如果属性值本身包含双引号，您可以使用单引号，就像这个实例：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">gangster</span> <span class="attr">name</span>=<span class="string">&#x27;George &quot;Shotgun&quot; Ziegler&#x27;</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>或者您可以使用字符实体：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">gangster</span> <span class="attr">name</span>=<span class="string">&quot;George <span class="symbol">&amp;quot;</span>Shotgun<span class="symbol">&amp;quot;</span> Ziegler&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="XML-元素-vs-属性"><a href="#XML-元素-vs-属性" class="headerlink" title="XML 元素 vs. 属性"></a>XML 元素 vs. 属性</h2><p>请看这些实例：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">person</span> <span class="attr">sex</span>=<span class="string">&quot;female&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">firstname</span>&gt;</span>Anna<span class="tag">&lt;/<span class="name">firstname</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">lastname</span>&gt;</span>Smith<span class="tag">&lt;/<span class="name">lastname</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">person</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">person</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">sex</span>&gt;</span>female<span class="tag">&lt;/<span class="name">sex</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">firstname</span>&gt;</span>Anna<span class="tag">&lt;/<span class="name">firstname</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">lastname</span>&gt;</span>Smith<span class="tag">&lt;/<span class="name">lastname</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">person</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>在第一个实例中，sex 是一个属性。在第二个实例中，sex 是一个元素。这两个实例都提供相同的信息。</p>
-<p>没有什么规矩可以告诉我们什么时候该使用属性，而什么时候该使用元素。我的经验是在 HTML 中，属性用起来很便利，但是在 XML 中，您应该尽量避免使用属性。如果信息感觉起来很像数据，那么请使用元素吧。</p>
-<p>属性难以阅读和维护。请尽量使用元素来描述数据。而仅仅使用属性来提供与数据无关的信息。</p>
-<h2 id="XML-文档验证"><a href="#XML-文档验证" class="headerlink" title="XML 文档验证"></a>XML 文档验证</h2><h3 id="DTD"><a href="#DTD" class="headerlink" title="DTD"></a>DTD</h3><p>合法的 XML 文档是”形式良好”的 XML 文档，这也符合文档类型定义（DTD）的规则：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">note</span> <span class="meta-keyword">SYSTEM</span> <span class="meta-string">&quot;Note.dtd&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">note</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">to</span>&gt;</span>Tove<span class="tag">&lt;/<span class="name">to</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">from</span>&gt;</span>Jani<span class="tag">&lt;/<span class="name">from</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">heading</span>&gt;</span>Reminder<span class="tag">&lt;/<span class="name">heading</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span>Don&#x27;t forget me this weekend!<span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">note</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>在上面的实例中，DOCTYPE 声明是对外部 DTD 文件的引用。下面的段落展示了这个文件的内容。</p>
-<h3 id="XML-Schema"><a href="#XML-Schema" class="headerlink" title="XML Schema"></a>XML Schema</h3><p>W3C 支持一种基于 XML 的 DTD 代替者，它名为 XML Schema：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">xs:element</span> <span class="attr">name</span>=<span class="string">&quot;note&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">xs:complexType</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">xs:sequence</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">xs:element</span> <span class="attr">name</span>=<span class="string">&quot;to&quot;</span> <span class="attr">type</span>=<span class="string">&quot;xs:string&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">xs:element</span> <span class="attr">name</span>=<span class="string">&quot;from&quot;</span> <span class="attr">type</span>=<span class="string">&quot;xs:string&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">xs:element</span> <span class="attr">name</span>=<span class="string">&quot;heading&quot;</span> <span class="attr">type</span>=<span class="string">&quot;xs:string&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">xs:element</span> <span class="attr">name</span>=<span class="string">&quot;body&quot;</span> <span class="attr">type</span>=<span class="string">&quot;xs:string&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">xs:sequence</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">xs:complexType</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">xs:element</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="XML-渲染"><a href="#XML-渲染" class="headerlink" title="XML 渲染"></a>XML 渲染</h1><h2 id="用-CSS-显示-XML"><a href="#用-CSS-显示-XML" class="headerlink" title="用 CSS 显示 XML"></a>用 CSS 显示 XML</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;</span></span><br><span class="line"><span class="meta">&lt;?xml-stylesheet type=&quot;text/css&quot; href=&quot;cd_catalog.css&quot;?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">CATALOG</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">CD</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">TITLE</span>&gt;</span>Empire Burlesque<span class="tag">&lt;/<span class="name">TITLE</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">ARTIST</span>&gt;</span>Bob Dylan<span class="tag">&lt;/<span class="name">ARTIST</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">COUNTRY</span>&gt;</span>USA<span class="tag">&lt;/<span class="name">COUNTRY</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">COMPANY</span>&gt;</span>Columbia<span class="tag">&lt;/<span class="name">COMPANY</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">PRICE</span>&gt;</span>10.90<span class="tag">&lt;/<span class="name">PRICE</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">YEAR</span>&gt;</span>1985<span class="tag">&lt;/<span class="name">YEAR</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">CD</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">CD</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">TITLE</span>&gt;</span>Hide your heart<span class="tag">&lt;/<span class="name">TITLE</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">ARTIST</span>&gt;</span>Bonnie Tyler<span class="tag">&lt;/<span class="name">ARTIST</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">COUNTRY</span>&gt;</span>UK<span class="tag">&lt;/<span class="name">COUNTRY</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">COMPANY</span>&gt;</span>CBS Records<span class="tag">&lt;/<span class="name">COMPANY</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">PRICE</span>&gt;</span>9.90<span class="tag">&lt;/<span class="name">PRICE</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">YEAR</span>&gt;</span>1988<span class="tag">&lt;/<span class="name">YEAR</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">CD</span>&gt;</span></span><br><span class="line">.</span><br><span class="line">.</span><br><span class="line">.</span><br><span class="line"><span class="tag">&lt;/<span class="name">CATALOG</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>使用 CSS 格式化 XML 不是常用的方法。W3C 推荐使用 XSLT。</p>
-<h2 id="使用-XSLT-显示-XML"><a href="#使用-XSLT-显示-XML" class="headerlink" title="使用 XSLT 显示 XML"></a>使用 XSLT 显示 XML</h2></div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2021-03-02T04:22:19.370Z" title="2021/3/2 下午12:22:19">2021-03-02</time>发表</span><span class="level-item"><time dateTime="2021-03-13T11:56:42.155Z" title="2021/3/13 下午7:56:42">2021-03-13</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/ROS/">ROS</a></span><span class="level-item">25 分钟读完 (大约3700个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2021/03/02/1222.html">ROS 学习笔记</a></h1><div class="content">学习 ROS 官方文档时做的学习笔记</div><a class="article-more button is-small is-size-7" href="/2021/03/02/1222.html#more">阅读更多</a></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2021-02-17T06:17:11.639Z" title="2021/2/17 下午2:17:11">2021-02-17</time>发表</span><span class="level-item"><time dateTime="2021-03-07T15:39:40.154Z" title="2021/3/7 下午11:39:40">2021-03-07</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E8%AF%BE%E7%A8%8B/">课程</a></span><span class="level-item">1 小时读完 (大约7704个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2021/02/17/1417.html">大学物理笔记</a></h1><div class="content">机械考研复试大学物理笔记，主要参考严导淦、王晓鸥、王伟的《大学物理学》。</div><a class="article-more button is-small is-size-7" href="/2021/02/17/1417.html#more">阅读更多</a></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2021-02-06T15:33:36.103Z" title="2021/2/6 下午11:33:36">2021-02-06</time>发表</span><span class="level-item"><time dateTime="2021-03-03T13:37:19.008Z" title="2021/3/3 下午9:37:19">2021-03-03</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/Git/">Git</a></span><span class="level-item">38 分钟读完 (大约5663个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2021/02/06/2333.html">Git Book 学习</a></h1><div class="content">基本照搬官网的 Git Book。</div><a class="article-more button is-small is-size-7" href="/2021/02/06/2333.html#more">阅读更多</a></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2021-02-05T13:36:10.413Z" title="2021/2/5 下午9:36:10">2021-02-05</time>发表</span><span class="level-item"><time dateTime="2021-03-03T13:56:01.498Z" title="2021/3/3 下午9:56:01">2021-03-03</time>更新</span><span class="level-item">几秒读完 (大约65个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2021/02/05/2136.html">Github Pages 创建</a></h1><div class="content">待整理。</div><a class="article-more button is-small is-size-7" href="/2021/02/05/2136.html#more">阅读更多</a></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2021-01-31T11:37:50.496Z" title="2021/1/31 下午7:37:50">2021-01-31</time>发表</span><span class="level-item"><time dateTime="2021-03-03T13:36:01.406Z" title="2021/3/3 下午9:36:01">2021-03-03</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/SLAM/">SLAM</a></span><span class="level-item">15 分钟读完 (大约2319个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2021/01/31/1937.html">SLAM 学习笔记</a></h1><div class="content"><blockquote>
+<ul>
+<li><p>符号</p>
+<p><img src="https://cdn.jsdelivr.net/gh/burgessx/img-bed@main/blog/20210425100259.png" alt="image-20210323223449382"></p>
+</li>
+<li><p>电压传输特性</p>
+<img src="https://cdn.jsdelivr.net/gh/burgessx/img-bed@main/blog/20210425100300.png" alt="image-20210323223415700" style="zoom:80%;" />
+</li>
+<li><p>主要性能参数</p>
+<ul>
+<li>开环差模电压放大倍数</li>
+<li>共模抑制比</li>
+<li>差模输入电阻</li>
+<li>输入失调电压</li>
+<li>输入失调电流</li>
+<li>最大共模输入电压</li>
+<li>最大差模输入电压</li>
+</ul>
+</li>
+<li><p>理想运算放大器</p>
+<ul>
+<li><p>符号</p>
+<p><img src="https://cdn.jsdelivr.net/gh/burgessx/img-bed@main/blog/20210425100301.png" alt="image-20210323224510501"></p>
+</li>
+<li><p>电压传输特性</p>
+<p><img src="https://cdn.jsdelivr.net/gh/burgessx/img-bed@main/blog/20210425100302.png" alt="image-20210323224530397"></p>
+</li>
+<li><p>工作在线性区时的两个结论</p>
+<ul>
+<li>虚短、虚地（若接地）</li>
+<li>虚断</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2021-04-25T04:24:28.868Z" title="2021/4/25 下午12:24:28">2021-04-25</time>发表</span><span class="level-item"><time dateTime="2021-04-25T02:01:22.132Z" title="2021/4/25 上午10:01:22">2021-04-25</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E8%AF%BE%E7%A8%8B/">课程</a></span><span class="level-item">1 小时读完 (大约7956个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2021/04/25/1224.html">大学物理笔记</a></h1><div class="content">机械考研复试大学物理笔记，主要参考严导淦、王晓鸥、王伟的《大学物理学》。</div><a class="article-more button is-small is-size-7" href="/2021/04/25/1224.html#more">阅读更多</a></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2021-04-25T04:24:28.831Z" title="2021/4/25 下午12:24:28">2021-04-25</time>发表</span><span class="level-item"><time dateTime="2021-04-25T01:45:09.672Z" title="2021/4/25 上午9:45:09">2021-04-25</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/SLAM/">SLAM</a></span><span class="level-item">16 分钟读完 (大约2339个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2021/04/25/1224.html">SLAM 学习笔记</a></h1><div class="content"><blockquote>
 <p>参考：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV16t411g7FR">高翔的视觉SLAM十四讲</a></p>
-</blockquote></div><a class="article-more button is-small is-size-7" href="/2021/01/31/1937.html#more">阅读更多</a></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2021-01-27T09:54:59.929Z" title="2021/1/27 下午5:54:59">2021-01-27</time>发表</span><span class="level-item"><time dateTime="2021-03-10T14:59:58.937Z" title="2021/3/10 下午10:59:58">2021-03-10</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/Git/">Git</a></span><span class="level-item">7 分钟读完 (大约1116个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2021/01/27/1754.html">Git 学习笔记</a></h1><div class="content"><blockquote>
-<p>参考：<a target="_blank" rel="noopener" href="https://www.liaoxuefeng.com/">廖雪峰的官方网站</a></p>
-</blockquote></div><a class="article-more button is-small is-size-7" href="/2021/01/27/1754.html#more">阅读更多</a></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2021-01-24T08:20:15.978Z" title="2021/1/24 下午4:20:15">2021-01-24</time>发表</span><span class="level-item"><time dateTime="2021-03-03T13:38:46.989Z" title="2021/3/3 下午9:38:46">2021-03-03</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/Linux/">Linux</a></span><span class="level-item">1 小时读完 (大约7190个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2021/01/24/1620.html">Shell 脚本命令学习</a></h1><div class="content"><blockquote>
+</blockquote></div><a class="article-more button is-small is-size-7" href="/2021/04/25/1224.html#more">阅读更多</a></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2021-04-25T04:24:28.586Z" title="2021/4/25 下午12:24:28">2021-04-25</time>发表</span><span class="level-item"><time dateTime="2021-03-17T12:31:46.613Z" title="2021/3/17 下午8:31:46">2021-03-17</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/ROS/">ROS</a></span><span class="level-item">25 分钟读完 (大约3710个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2021/04/25/1224.html">ROS 学习笔记</a></h1><div class="content">学习 ROS 官方文档时做的学习笔记</div><a class="article-more button is-small is-size-7" href="/2021/04/25/1224.html#more">阅读更多</a></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2021-04-25T04:24:28.567Z" title="2021/4/25 下午12:24:28">2021-04-25</time>发表</span><span class="level-item"><time dateTime="2021-04-03T07:51:45.159Z" title="2021/4/3 下午3:51:45">2021-04-03</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/Linux/">Linux</a></span><span class="level-item">1 小时读完 (大约7328个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2021/04/25/1224.html">Shell 脚本命令学习</a></h1><div class="content"><blockquote>
 <p>参考：<a target="_blank" rel="noopener" href="https://www.runoob.com/linux/linux-shell.html">菜鸟教程</a></p>
-</blockquote></div><a class="article-more button is-small is-size-7" href="/2021/01/24/1620.html#more">阅读更多</a></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2021-01-20T11:52:33.801Z" title="2021/1/20 下午7:52:33">2021-01-20</time>发表</span><span class="level-item"><time dateTime="2021-03-03T13:37:56.493Z" title="2021/3/3 下午9:37:56">2021-03-03</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/HTML/">HTML</a></span><span class="level-item">几秒读完 (大约27个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2021/01/20/1952.html">HTML 学习笔记</a></h1><div class="content"><h1 id="HTML模板"><a href="#HTML模板" class="headerlink" title="HTML模板"></a>HTML模板</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span></span></span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">&lt;html&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>菜鸟教程(runoob.com)<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"> </span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>我的第一个标题<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>我的第一个段落。<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"> </span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>兄弟连 Linux 教程</p>
+</blockquote></div><a class="article-more button is-small is-size-7" href="/2021/04/25/1224.html#more">阅读更多</a></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2021-04-25T04:24:28.542Z" title="2021/4/25 下午12:24:28">2021-04-25</time>发表</span><span class="level-item"><time dateTime="2021-03-03T13:37:56.493Z" title="2021/3/3 下午9:37:56">2021-03-03</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/HTML/">HTML</a></span><span class="level-item">几秒读完 (大约27个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2021/04/25/1224.html">HTML 学习笔记</a></h1><div class="content"><h1 id="HTML模板"><a href="#HTML模板" class="headerlink" title="HTML模板"></a>HTML模板</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span></span></span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">&lt;html&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>菜鸟教程(runoob.com)<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"> </span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>我的第一个标题<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>我的第一个段落。<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"> </span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-</div></article></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="https://avatars.githubusercontent.com/u/52914833?s=400&amp;u=a6dbfe356f8206e4e29a7220973eca2b46fc0ab6&amp;v=4" alt="BurgessX"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">BurgessX</p><p class="is-size-6 is-block">College Student</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Shenzhen, Guangdong, China</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">40</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">14</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">23</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/burgessx" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/burgessx"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Facebook" href="https://facebook.com"><i class="fab fa-facebook"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Twitter" href="https://twitter.com"><i class="fab fa-twitter"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="RSS" href="/"><i class="fas fa-rss"></i></a></div></div></div><!--!--><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">链接</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://hexo.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Hexo</span></span><span class="level-right"><span class="level-item tag">hexo.io</span></span></a></li><li><a class="level is-mobile" href="https://bulma.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Bulma</span></span><span class="level-right"><span class="level-item tag">bulma.io</span></span></a></li><li><a class="level is-mobile" href="https://blog.zhangruipeng.me/hexo-theme-icarus/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Icarus</span></span><span class="level-right"><span class="level-item tag">blog.zhangruipeng.me</span></span></a></li></ul></div></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/CSS/"><span class="level-start"><span class="level-item">CSS</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/Git/"><span class="level-start"><span class="level-item">Git</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/HTML/"><span class="level-start"><span class="level-item">HTML</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/JavaScript/"><span class="level-start"><span class="level-item">JavaScript</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/Latex/"><span class="level-start"><span class="level-item">Latex</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/Linux/"><span class="level-start"><span class="level-item">Linux</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/categories/Python/"><span class="level-start"><span class="level-item">Python</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/ROS/"><span class="level-start"><span class="level-item">ROS</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/SLAM/"><span class="level-start"><span class="level-item">SLAM</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/SVG/"><span class="level-start"><span class="level-item">SVG</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/VLC/"><span class="level-start"><span class="level-item">VLC</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/XML/"><span class="level-start"><span class="level-item">XML</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/%E7%94%B5%E8%84%91%E6%95%85%E9%9A%9C/"><span class="level-start"><span class="level-item">电脑故障</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/%E8%AF%BE%E7%A8%8B/"><span class="level-start"><span class="level-item">课程</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-03-16T14:49:56.266Z">2021-03-16</time></p><p class="title"><a href="/2021/03/16/2249.html">UR5e 绘画</a></p><p class="categories"><a href="/categories/ROS/">ROS</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-03-12T05:01:39.505Z">2021-03-12</time></p><p class="title"><a href="/2021/03/12/1301.html">Python 学习笔记</a></p><p class="categories"><a href="/categories/Python/">Python</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-03-10T12:30:02.597Z">2021-03-10</time></p><p class="title"><a href="/2021/03/10/2030.html">SVG 学习笔记</a></p><p class="categories"><a href="/categories/SVG/">SVG</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-03-09T13:46:18.969Z">2021-03-09</time></p><p class="title"><a href="/2021/03/09/2146.html">CSS 学习笔记</a></p><p class="categories"><a href="/categories/CSS/">CSS</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-03-09T13:44:37.285Z">2021-03-09</time></p><p class="title"><a href="/2021/03/09/2144.html">JavaScript 学习笔记</a></p><p class="categories"><a href="/categories/JavaScript/">JavaScript</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2021/03/"><span class="level-start"><span class="level-item">三月 2021</span></span><span class="level-end"><span class="level-item tag">9</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/02/"><span class="level-start"><span class="level-item">二月 2021</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/01/"><span class="level-start"><span class="level-item">一月 2021</span></span><span class="level-end"><span class="level-item tag">16</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/06/"><span class="level-start"><span class="level-item">六月 2020</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/02/"><span class="level-start"><span class="level-item">二月 2020</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2019/12/"><span class="level-start"><span class="level-item">十二月 2019</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2019/10/"><span class="level-start"><span class="level-item">十月 2019</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2019/09/"><span class="level-start"><span class="level-item">九月 2019</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/Blog/"><span class="tag">Blog</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/CSS/"><span class="tag">CSS</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Git/"><span class="tag">Git</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/HTML/"><span class="tag">HTML</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/JavaScript/"><span class="tag">JavaScript</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Latex/"><span class="tag">Latex</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Linux/"><span class="tag">Linux</span><span class="tag">5</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Python/"><span class="tag">Python</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/ROS/"><span class="tag">ROS</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/SLAM/"><span class="tag">SLAM</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/SVG/"><span class="tag">SVG</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Shell/"><span class="tag">Shell</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/TODO/"><span class="tag">TODO</span><span class="tag">10</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Vim/"><span class="tag">Vim</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/WIFI/"><span class="tag">WIFI</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Windows/"><span class="tag">Windows</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/XML/"><span class="tag">XML</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%95%B0%E5%AD%A6/"><span class="tag">数学</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%97%A0%E7%BA%BF%E9%80%9A%E4%BF%A1/"><span class="tag">无线通信</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%9C%BA%E6%A2%B0%E8%87%82/"><span class="tag">机械臂</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%94%B5%E8%84%91%E6%95%85%E9%9A%9C/"><span class="tag">电脑故障</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%BD%91%E7%BB%9C/"><span class="tag">网络</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E8%AF%BE%E7%A8%8B/"><span class="tag">课程</span><span class="tag">1</span></a></div></div></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/">BurgessX</a><p class="is-size-7"><span>&copy; 2021 BurgessX</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2021-04-25T04:24:28.129Z" title="2021/4/25 下午12:24:28">2021-04-25</time>发表</span><span class="level-item"><time dateTime="2021-04-25T01:38:13.430Z" title="2021/4/25 上午9:38:13">2021-04-25</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/Git/">Git</a></span><span class="level-item">8 分钟读完 (大约1169个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2021/04/25/1224.html">Git 学习笔记</a></h1><div class="content"><blockquote>
+<p>参考：<a target="_blank" rel="noopener" href="https://www.liaoxuefeng.com/">廖雪峰的官方网站</a></p>
+</blockquote></div><a class="article-more button is-small is-size-7" href="/2021/04/25/1224.html#more">阅读更多</a></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2021-04-25T04:24:28.126Z" title="2021/4/25 下午12:24:28">2021-04-25</time>发表</span><span class="level-item"><time dateTime="2021-04-25T01:35:29.454Z" title="2021/4/25 上午9:35:29">2021-04-25</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/Git/">Git</a></span><span class="level-item">38 分钟读完 (大约5668个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2021/04/25/1224.html">Git Book 学习</a></h1><div class="content">基本照搬官网的 Git Book。</div><a class="article-more button is-small is-size-7" href="/2021/04/25/1224.html#more">阅读更多</a></article></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="https://avatars.githubusercontent.com/u/52914833?s=400&amp;u=a6dbfe356f8206e4e29a7220973eca2b46fc0ab6&amp;v=4" alt="BurgessX"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">BurgessX</p><p class="is-size-6 is-block">College Student</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Shenzhen, Guangdong, China</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">20</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">9</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">15</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/burgessx" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/burgessx"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Facebook" href="https://facebook.com"><i class="fab fa-facebook"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Twitter" href="https://twitter.com"><i class="fab fa-twitter"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="RSS" href="/"><i class="fas fa-rss"></i></a></div></div></div><!--!--><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">链接</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://hexo.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Hexo</span></span><span class="level-right"><span class="level-item tag">hexo.io</span></span></a></li><li><a class="level is-mobile" href="https://bulma.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Bulma</span></span><span class="level-right"><span class="level-item tag">bulma.io</span></span></a></li><li><a class="level is-mobile" href="https://blog.zhangruipeng.me/hexo-theme-icarus/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Icarus</span></span><span class="level-right"><span class="level-item tag">blog.zhangruipeng.me</span></span></a></li></ul></div></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/Git/"><span class="level-start"><span class="level-item">Git</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/HTML/"><span class="level-start"><span class="level-item">HTML</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/Linux/"><span class="level-start"><span class="level-item">Linux</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/categories/Python/"><span class="level-start"><span class="level-item">Python</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/ROS/"><span class="level-start"><span class="level-item">ROS</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/SLAM/"><span class="level-start"><span class="level-item">SLAM</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/VLC/"><span class="level-start"><span class="level-item">VLC</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/%E7%94%B5%E8%84%91%E6%95%85%E9%9A%9C/"><span class="level-start"><span class="level-item">电脑故障</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/%E8%AF%BE%E7%A8%8B/"><span class="level-start"><span class="level-item">课程</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-04-25T04:24:28.872Z">2021-04-25</time></p><p class="title"><a href="/2021/04/25/1224.html">电工笔记</a></p><p class="categories"><a href="/categories/%E8%AF%BE%E7%A8%8B/">课程</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-04-25T04:24:28.870Z">2021-04-25</time></p><p class="title"><a href="/2021/04/25/1224.html">电子技术笔记</a></p><p class="categories"><a href="/categories/%E8%AF%BE%E7%A8%8B/">课程</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-04-25T04:24:28.868Z">2021-04-25</time></p><p class="title"><a href="/2021/04/25/1224.html">大学物理笔记</a></p><p class="categories"><a href="/categories/%E8%AF%BE%E7%A8%8B/">课程</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-04-25T04:24:28.857Z">2021-04-25</time></p><p class="title"><a href="/2021/04/25/1224.html">在 BIOS 中将 SATA 改为 AHCI 后重启蓝屏</a></p><p class="categories"><a href="/categories/%E7%94%B5%E8%84%91%E6%95%85%E9%9A%9C/">电脑故障</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-04-25T04:24:28.854Z">2021-04-25</time></p><p class="title"><a href="/2021/04/25/1224.html">Win10 频繁开启代理导致断网问题</a></p><p class="categories"><a href="/categories/%E7%94%B5%E8%84%91%E6%95%85%E9%9A%9C/">电脑故障</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2021/04/"><span class="level-start"><span class="level-item">四月 2021</span></span><span class="level-end"><span class="level-item tag">18</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/02/"><span class="level-start"><span class="level-item">二月 2021</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/Beaglebone/"><span class="tag">Beaglebone</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Git/"><span class="tag">Git</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/HTML/"><span class="tag">HTML</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Linux/"><span class="tag">Linux</span><span class="tag">5</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Python/"><span class="tag">Python</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/ROS/"><span class="tag">ROS</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/SLAM/"><span class="tag">SLAM</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Shell/"><span class="tag">Shell</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/TODO/"><span class="tag">TODO</span><span class="tag">8</span></a></div><div class="control"><a class="tags has-addons" href="/tags/VLC/"><span class="tag">VLC</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Vim/"><span class="tag">Vim</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%9C%BA%E6%A2%B0%E8%87%82/"><span class="tag">机械臂</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%94%B5%E8%84%91%E6%95%85%E9%9A%9C/"><span class="tag">电脑故障</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%BD%91%E7%BB%9C/"><span class="tag">网络</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E8%AF%BE%E7%A8%8B/"><span class="tag">课程</span><span class="tag">3</span></a></div></div></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/">BurgessX</a><p class="is-size-7"><span>&copy; 2021 BurgessX</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
             article: {
                 highlight: {
                     clipboard: true,
