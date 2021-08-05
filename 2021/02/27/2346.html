@@ -1,0 +1,474 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>Linux 常用命令及相关问题 - BurgessX&#039;s Blog</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="BurgessX&#039;s Blog"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="BurgessX&#039;s Blog"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="用到就整理到这里。"><meta property="og:type" content="blog"><meta property="og:title" content="Linux 常用命令及相关问题"><meta property="og:url" content="https://burgessx.github.io/2021/02/27/2346.html"><meta property="og:site_name" content="BurgessX&#039;s Blog"><meta property="og:description" content="用到就整理到这里。"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/burgessx/img-bed@main/blog/20210425093935.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/burgessx/img-bed@main/blog/20210425093936.png"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/burgessx/img-bed@main/blog/20210425094005.png"><meta property="article:published_time" content="2021-02-27T15:46:00.000Z"><meta property="article:modified_time" content="2021-07-26T11:43:03.142Z"><meta property="article:author" content="BurgessX"><meta property="article:tag" content="Linux"><meta property="article:tag" content="Vim"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="https://cdn.jsdelivr.net/gh/burgessx/img-bed@main/blog/20210425093935.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://burgessx.github.io/2021/02/27/2346.html"},"headline":"Linux 常用命令及相关问题","image":["https://cdn.jsdelivr.net/gh/burgessx/img-bed@main/blog/20210425093935.png","https://cdn.jsdelivr.net/gh/burgessx/img-bed@main/blog/20210425093936.png","https://cdn.jsdelivr.net/gh/burgessx/img-bed@main/blog/20210425094005.png"],"datePublished":"2021-02-27T15:46:00.000Z","dateModified":"2021-07-26T11:43:03.142Z","author":{"@type":"Person","name":"BurgessX"},"publisher":{"@type":"Organization","name":"BurgessX's Blog","logo":{"@type":"ImageObject","url":"https://burgessx.github.io/img/logo.svg"}},"description":"用到就整理到这里。"}</script><link rel="canonical" href="https://burgessx.github.io/2021/02/27/2346.html"><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 5.4.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="BurgessX&#039;s Blog" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2021-02-27T15:46:00.000Z" title="2021/2/27 下午11:46:00">2021-02-27</time>发表</span><span class="level-item"><time dateTime="2021-07-26T11:43:03.142Z" title="2021/7/26 下午7:43:03">2021-07-26</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/Linux/">Linux</a></span><span class="level-item">36 分钟读完 (大约5421个字)</span></div></div><h1 class="title is-3 is-size-4-mobile">Linux 常用命令及相关问题</h1><div class="content"><h1 id="Linux-常用命令"><a href="#Linux-常用命令" class="headerlink" title="Linux 常用命令"></a>Linux 常用命令</h1><p>准确地说应该是 Linux shell 常用命令</p>
+<h2 id="最常用的命令"><a href="#最常用的命令" class="headerlink" title="最常用的命令"></a>最常用的命令</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">cd ..	# 返回上一级目录</span><br><span class="line">cd	# 返回根目录</span><br><span class="line">cd directory_name	# 进入文件夹</span><br><span class="line">cd -	# 返回上一次目录</span><br><span class="line">cd ~	# 普通用户进入 /home/&lt;user&gt; 文件夹，root 进入 /root 文件夹</span><br><span class="line"></span><br><span class="line">pwd	# 显示当前目录</span><br><span class="line">ls	# 显示当前文件夹下的文件和文件夹</span><br><span class="line">ls -a	# 显示当前文件夹下的文件和文件夹，包括隐藏文件</span><br><span class="line">ls -l	# 显示长信息，包括文件权限，修改时间等</span><br><span class="line">ls -i	# 显示inode（物理索引）信息</span><br><span class="line">ls abc*	# 列出以abc开头为文件名的所有文件</span><br><span class="line"></span><br><span class="line">rm	# 删除</span><br><span class="line">mv	# 移动</span><br><span class="line">cp	# 拷贝</span><br><span class="line">mkdir directory_name	# 创建文件夹</span><br><span class="line">mkdir -p dir1/dir2		# 递归创建文件夹</span><br><span class="line">touch filename	# 创建文件</span><br><span class="line">./filename	# 运行当前文件夹下的filename文件。如果不加“./”，则系统会到PATH宏下找文件？</span><br><span class="line"></span><br><span class="line">reboot	# 重启</span><br><span class="line">su	# 进入root模式（密码：root，也有可能初始没设置）</span><br><span class="line">exit	# 如果是在root模式下，则会退出root；如果是普通用户模式下，则会退出系统</span><br><span class="line">sudo command_name	#以root权限执行命令</span><br><span class="line"></span><br><span class="line">clear	# 清屏</span><br><span class="line">reset	# 应该是重启终端</span><br><span class="line"><span class="meta">#</span><span class="bash"> 或者 ctrl+l 也可以清屏</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> ctrl+u 清除当前光标位置前面的输入</span></span><br><span class="line"></span><br><span class="line">apt install</span><br><span class="line">apt remove	# 注意：慎用 apt-get autoremove</span><br><span class="line"></span><br><span class="line">export [-fnp][变量名称]=[变量设置值]	</span><br><span class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">export</span> 可新增，修改或删除环境变量，供后续执行的程序使用。<span class="built_in">export</span> 的效力仅限于该次登陆操作。</span></span><br><span class="line">env		# 查看当前shell的所有环境变量</span><br><span class="line"></span><br><span class="line">whereis &lt;pkg_name&gt;</span><br><span class="line">which &lt;pkg_name&gt;	# 可以用来查看命令实际运行的绝对路径</span><br><span class="line"></span><br><span class="line">lsof -i:ipv46_files	# 查找网络文件的pid</span><br><span class="line">kill -9 pid			# 杀死进程</span><br></pre></td></tr></table></figure>
+
+<!--more-->
+
+
+
+<h2 id="管道常用命令"><a href="#管道常用命令" class="headerlink" title="管道常用命令"></a>管道常用命令</h2><blockquote>
+<p>参考：<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/9c0c2b57cb73">https://www.jianshu.com/p/9c0c2b57cb73</a></p>
+</blockquote>
+<ul>
+<li><p>顺序执行多条命令</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">command1;command2;command3;</span><br></pre></td></tr></table></figure></li>
+<li><p>有条件的执行多条命令</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">command1 &amp;&amp; command2 || command3</span><br></pre></td></tr></table></figure>
+
+<p><code>&amp;&amp;</code>：如果前一条命令执行成功则执行下一条命令<br><code>||</code>：与&amp;&amp;命令相反，执行不成功时执行这个命令</p>
+</li>
+<li><p><code>$?</code>：存储上一次命令的返回结果</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">which</span> git &gt; /dev/null &amp;&amp; git --<span class="built_in">help</span>  // 如果存在git命令，执行git --<span class="built_in">help</span>命令</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">echo</span> $?</span> </span><br></pre></td></tr></table></figure></li>
+<li><p>管道是一种通信机制，通常用于进程间的通信（也可通过socket进行网络通信），它表现出来的形式将前面每一个进程的正确输出（stdout）直接作为下一个进程的输入（stdin）。</p>
+</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/burgessx/img-bed@main/blog/20210425093935.png" alt="img"></p>
+<p>eg：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ls -l /etc | more					# 分页打印 /etc 下的文件，按q退出</span><br><span class="line">netstat -an | grep &quot;ESTABLISHED&quot;	# 查看当前建立连接的用户</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="选取命令"><a href="#选取命令" class="headerlink" title="选取命令"></a>选取命令</h3><h4 id="cut"><a href="#cut" class="headerlink" title="cut"></a>cut</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">cut -d &#x27;分隔字符&#x27; -f field // 用于分隔字符</span><br><span class="line">cut -c 字符范围</span><br><span class="line">[参数说明]</span><br><span class="line">-d : 后面接分隔字符,通常与 -f 一起使用</span><br><span class="line">-f : 根据-d 将信息分隔成数段，-f 后接数字 表示取出第几段</span><br><span class="line">-c : 以字符为单位取出固定字符区间的信息</span><br></pre></td></tr></table></figure>
+
+<h4 id="grep"><a href="#grep" class="headerlink" title="grep"></a>grep</h4><p>功能：按行过滤</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">grep [OPTION]... PATTERNS [FILE]...</span><br><span class="line"></span><br><span class="line">[OPTION]</span><br><span class="line">-a	：将binary文件以text文件的方式查找数据</span><br><span class="line">-w	：全字匹配</span><br><span class="line">-v	：反向搜索</span><br><span class="line">-l	：只打印含有关键词的文件的名称</span><br><span class="line">-L	：只打印不含有关键词的文件的名称</span><br><span class="line">-n	：显示行数</span><br><span class="line">-c	：统计多少行</span><br><span class="line">-A	：列出后面的邻行</span><br><span class="line">-B	：列出前面的邻行</span><br><span class="line">-C	：列出前后的邻行</span><br><span class="line">-E  ：扩展正则表达式</span><br><span class="line">-e  ：正则表达式</span><br></pre></td></tr></table></figure>
+
+<p>eg：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">grep -i &#x27;hello world&#x27; menu.h main.c	# 查找，忽略大小写</span><br><span class="line"></span><br><span class="line">grep &#x27;^leo&#x27; /etc/passwd			# 搜索 /etc/passwd 文件中开头是 leo 的行</span><br><span class="line">grep &#x27;bash$&#x27; /etc/passwd		# 搜索 /etc/passwd 文件中行尾是 bash 的行</span><br><span class="line">grep -E &#x27;^root|bash$&#x27; passwd	# 多条件查找：passwd中以root开头或以bash结尾的行</span><br><span class="line">grep -l &#x27;123&#x27; *.[ch]			# 在当前目录下的所有 .c 或 .h 文件中找指定字符串，若找到则其打印文件名</span><br><span class="line">cat /etc/dnsmasq.conf | grep -e &#x27;^[^#]&#x27;	# 寻找文件的非注释行</span><br><span class="line"></span><br><span class="line">find . -name ’*.[ch]’ | xargs grep -l thing</span><br><span class="line">find . -name ’*.[ch]’ -print0 | xargs -r -0 grep -l thing	# 比上面更加安全的写法</span><br><span class="line"></span><br><span class="line">grep -l sprintf ‘find $HOME -name ’*.c’ -print‘	# 等价于下面的命令。</span><br><span class="line">find $HOME -name ’*.c’ -print | xargs grep -l sprintf	# 寻找含有sprintf的.c文件</span><br></pre></td></tr></table></figure>
+
+<h3 id="排序：sort"><a href="#排序：sort" class="headerlink" title="排序：sort"></a>排序：sort</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">sort [OPTION]... [FILE]...</span><br><span class="line"></span><br><span class="line">[OPTION]</span><br><span class="line">-f ：忽略大小写的差异，例如A 与a 视为编码相同</span><br><span class="line">-b ：忽略最前面的空格部分</span><br><span class="line">-M ：以月份的名字来排序，例如JAN, DEC 等等的排序方法</span><br><span class="line">-n ：使用『纯数字』进行排序默认是以文字型态来排序的)</span><br><span class="line">-r ：反向排序</span><br><span class="line">-u ：过滤掉相同的行，类似uniq，但不相邻的也会过滤</span><br><span class="line">-t ：分隔符号，预设是用[tab] 键来分隔</span><br><span class="line">-k ：以那个区间(field) 来进行排序的意思</span><br></pre></td></tr></table></figure>
+
+<h3 id="计数：wc"><a href="#计数：wc" class="headerlink" title="计数：wc"></a>计数：wc</h3><p>功能：word count 计数</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">wc [OPTION]... [FILE]...</span><br><span class="line"></span><br><span class="line">[OPTION]</span><br><span class="line">-l ：仅打印行数 newline</span><br><span class="line">-w ：仅打印词数 word</span><br><span class="line">-m ：仅打印字符数 character</span><br><span class="line"></span><br><span class="line">-L ：仅打印最大行长度</span><br><span class="line">-c ：仅打印字节数</span><br></pre></td></tr></table></figure>
+
+<p>eg：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">wc file.txt				# 依次打印file.txt文件的newline, word, character数目</span><br><span class="line">wc file1.txt file2.txt	# 分别依次打印file1.txt和file2.txt文件和总计的newline, word, character数目</span><br><span class="line">wc -l file.txt			# 打印file.txt的行数</span><br><span class="line"><span class="meta">#</span><span class="bash"> 结合管道</span></span><br><span class="line">ls | wc -l				# 打印当前目录文件和目录总数</span><br><span class="line">ls -l | grep &#x27;^d&#x27; | wc -l	# 打印当前目录下的目录总数</span><br><span class="line">ls -l | grep &#x27;^-&#x27; | wc -l	# 打印当前目录下的文件总数</span><br></pre></td></tr></table></figure>
+
+<h3 id="过滤紧邻重复行：uniq"><a href="#过滤紧邻重复行：uniq" class="headerlink" title="过滤紧邻重复行：uniq"></a>过滤紧邻重复行：uniq</h3><p>记忆：unique</p>
+<p>功能：过滤紧邻重复行，没有真的删除</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">uniq [OPTION]... [INPUT [OUTPUT]]</span><br><span class="line"></span><br><span class="line">[OPTION]</span><br><span class="line">-i ：忽略大小写的不同</span><br><span class="line">-c ：进行计数</span><br></pre></td></tr></table></figure>
+
+<p>eg：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">uniq file.txt		# 过滤 file.txt 中的紧邻重复行</span><br><span class="line">uniq -c file.txt	# 过滤 file.txt 中的紧邻重复行并计数</span><br><span class="line">touch file2.txt &amp;&amp; uniq file.txt &gt; file2.txt	# 保存 file.txt 中删除紧邻重复行后的结果到 file2.txt</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="双向重定向命令：tee"><a href="#双向重定向命令：tee" class="headerlink" title="双向重定向命令：tee"></a>双向重定向命令：tee</h3><p><img src="https://cdn.jsdelivr.net/gh/burgessx/img-bed@main/blog/20210425093936.png" alt="img"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tee [-a] file</span><br><span class="line">[参数]</span><br><span class="line">-a : 以累加的方式，将数据加入file中</span><br></pre></td></tr></table></figure>
+
+<h3 id="字符转换命令"><a href="#字符转换命令" class="headerlink" title="字符转换命令"></a>字符转换命令</h3><h4 id="tr"><a href="#tr" class="headerlink" title="tr"></a>tr</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">tr [-ds] set</span><br><span class="line">[参数]</span><br><span class="line">-d : 删除信息当中的set1这个字符串</span><br><span class="line">-s : 替换掉重复的字符</span><br></pre></td></tr></table></figure>
+
+<h4 id="col"><a href="#col" class="headerlink" title="col"></a>col</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">col [-xb]</span><br><span class="line">[参数]</span><br><span class="line">-x ： 将tab键换成对等的空格键</span><br><span class="line">-b : 在文字内有反斜杠(/)时，仅保留反斜杠最后接的那个字符</span><br></pre></td></tr></table></figure>
+
+<h4 id="join"><a href="#join" class="headerlink" title="join"></a>join</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">join [-ti12] file1 file2</span><br><span class="line"> [参数]`</span><br><span class="line"> -t : join 默认以空格符分隔数据，并且对比第一个字段的数据 ,如果两个文件相同，则将两条数据连成一行</span><br><span class="line"> -i : 忽略大小写的差异</span><br><span class="line"> -1 : 说明第一个文件通过那个字段来进行分析</span><br><span class="line"> -2 : 说明第二个文件通过那个字段来分析</span><br></pre></td></tr></table></figure>
+
+<h4 id="paste"><a href="#paste" class="headerlink" title="paste"></a>paste</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">paste [-d] file1 file2</span><br><span class="line">[ 参数]</span><br><span class="line">-d : 后面可以接分隔字符，默认以[tab]来分隔的</span><br><span class="line">- : 如果file部分写成-，表示接受standard input数据的意思</span><br></pre></td></tr></table></figure>
+
+<h4 id="expand"><a href="#expand" class="headerlink" title="expand"></a>expand</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">expand [-t] file</span><br><span class="line">[参数]</span><br><span class="line">-t : 后面接数字，一般，一个tab可以用8个空格代替，可以自行定义代表几个空格</span><br></pre></td></tr></table></figure>
+
+<h3 id="切割命令"><a href="#切割命令" class="headerlink" title="切割命令"></a>切割命令</h3><h4 id="split"><a href="#split" class="headerlink" title="split"></a>split</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">split [-bl] file prefix</span><br><span class="line"> [参数]</span><br><span class="line"> -b : 后面可接欲切割文件的大小，可加单位，例如b,k,m等</span><br><span class="line"> -l : 以行数来进行切割</span><br><span class="line"> PREFIX : 代表前导符，可作为切割文件的前导文字</span><br></pre></td></tr></table></figure>
+
+
+
+
+<h2 id="Vim-相关命令"><a href="#Vim-相关命令" class="headerlink" title="Vim 相关命令"></a>Vim 相关命令</h2><ul>
+<li>vim是vi的升级版</li>
+<li>命令行输入 <code>vimtutor</code> 就可以看到教程</li>
+</ul>
+<h3 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h3><ul>
+<li><p>vim的三种模式</p>
+<ul>
+<li><p><strong>命令模式</strong></p>
+<ul>
+<li>其他模式下按Esc键可进入命令模式</li>
+</ul>
+</li>
+<li><p><strong>输入模式</strong></p>
+<ul>
+<li><p>命令模式下按i或a或o可进入</p>
+<blockquote>
+<p>“i”命令可以在当前光标之前插入文本。<br>“a”命令可以在当前光标之后插入文本。（实测也是光标之前）<br>“o”命令可以在当前行的下面另起一行，并使当前模式转为Insert模式。<br>“O”命令(注意是大写的字母O)将在当前行的上面另起一行。</p>
+</blockquote>
+</li>
+<li><p>输入模式下，按Insert键可以选择<strong>插入模式</strong>（INSERT）还是<strong>替换模式</strong>（REPLACE）</p>
+</li>
+</ul>
+</li>
+<li><p><strong>底线命令模式</strong></p>
+<ul>
+<li>命令模式下输入:可进入，按回车结束运行</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<img src="https://cdn.jsdelivr.net/gh/burgessx/img-bed@main/blog/20210425094005.png" alt="img" style="zoom:50%;" />
+
+<h3 id="命令模式命令"><a href="#命令模式命令" class="headerlink" title="命令模式命令"></a>命令模式命令</h3><h4 id="选择与跳转"><a href="#选择与跳转" class="headerlink" title="选择与跳转"></a>选择与跳转</h4><table>
+<thead>
+<tr>
+<th align="left">命令</th>
+<th align="left">作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">gg</td>
+<td align="left">跳到文首</td>
+</tr>
+<tr>
+<td align="left">V</td>
+<td align="left">选择（Visual Line模式）</td>
+</tr>
+<tr>
+<td align="left">G</td>
+<td align="left">跳到文尾（Ground）</td>
+</tr>
+<tr>
+<td align="left">ggVG</td>
+<td align="left">全选</td>
+</tr>
+</tbody></table>
+<p>Visual Line下选择文本后，可执行以下命令：</p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>d</td>
+<td>删除</td>
+</tr>
+<tr>
+<td>y</td>
+<td>复制到<code>&quot;剪切板</code></td>
+</tr>
+<tr>
+<td>p</td>
+<td>粘贴<code>&quot;剪切板</code>中的内容</td>
+</tr>
+<tr>
+<td>“+y</td>
+<td>复制到系统剪贴板(也就是vim的+寄存器）</td>
+</tr>
+<tr>
+<td>“+p</td>
+<td>从系统剪贴板粘贴</td>
+</tr>
+</tbody></table>
+<h4 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h4><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>x</td>
+<td>删除一个字符</td>
+</tr>
+<tr>
+<td>dd</td>
+<td>删除光标当前行</td>
+</tr>
+</tbody></table>
+<h4 id="撤销与重做"><a href="#撤销与重做" class="headerlink" title="撤销与重做"></a>撤销与重做</h4><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>u</td>
+<td>撤销上一步操作</td>
+</tr>
+<tr>
+<td>U</td>
+<td>一次撤消对最后一次编辑的一行的全部操作。第二次使用该命令则会撤消前一个”U”的操作。</td>
+</tr>
+<tr>
+<td>ctrl+r</td>
+<td>重做（撤销撤销操作）</td>
+</tr>
+</tbody></table>
+<h3 id="底线命令模式命令"><a href="#底线命令模式命令" class="headerlink" title="底线命令模式命令"></a>底线命令模式命令</h3><h4 id="常用"><a href="#常用" class="headerlink" title="常用"></a>常用</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">:wq!		# 强制保存并退出</span><br><span class="line">:/keyword	# 从上往下查找，按“n”跳到下一个，“*”和“.”可以模糊匹配</span><br><span class="line">:?keyword	# 从下往上查找，按“n”跳到下一个</span><br><span class="line">:set nu		# 显示行数（nu=number）</span><br><span class="line">:23			# 跳到第23行</span><br></pre></td></tr></table></figure>
+
+<h4 id="编码与格式"><a href="#编码与格式" class="headerlink" title="编码与格式"></a>编码与格式</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">:set ff						# 查看文件格式（fileformat）</span><br><span class="line">:set ff=unix				# 设置文件格式为unix。解决文件无法执行问题。</span><br><span class="line">:set fileencoding			# 查看文件编码</span><br><span class="line">:set fileencoding=utf-8 	# 设置文件编码为utf-8。解决文件乱码问题。</span><br></pre></td></tr></table></figure>
+
+<h3 id="输入模式命令"><a href="#输入模式命令" class="headerlink" title="输入模式命令"></a>输入模式命令</h3><p>暂无。</p>
+<h2 id="网络相关命令"><a href="#网络相关命令" class="headerlink" title="网络相关命令"></a>网络相关命令</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">write</span><br><span class="line">wall</span><br><span class="line">ping</span><br><span class="line">ifconfig</span><br><span class="line">mail</span><br><span class="line">last	# 查看用户登录信息</span><br><span class="line">lastlog</span><br><span class="line">traceroute</span><br><span class="line">netstat		# 显示网络相关信息</span><br><span class="line">netstat -rn					# 查看路由列表，可以看到网关</span><br><span class="line">service network restart		# 重启网络</span><br><span class="line">mount	# 挂载（一般挂载在/mnt的某个子目录下）</span><br></pre></td></tr></table></figure>
+
+<h3 id="相关文件"><a href="#相关文件" class="headerlink" title="相关文件"></a>相关文件</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">/etc/resolv.conf			# 临时修改DNS</span><br><span class="line">/etc/systemd/resolved.conf	# 一般是一个指向上面的软连接。永久修改DNS</span><br><span class="line">/etc/network/interface		# 网络配置文件</span><br><span class="line"></span><br><span class="line">/etc/hosts					# hosts 列表</span><br><span class="line"></span><br><span class="line">/etc/netplan/*.yaml	# ubuntu用netplan配置网络</span><br><span class="line"><span class="meta">#</span><span class="bash"> netplan try		<span class="comment"># 应用前先验证</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> netplan apply		<span class="comment"># 应用配置</span></span></span><br></pre></td></tr></table></figure>
+
+<h3 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ping &lt;$IP|$DOMAIN&gt;		# 注意ping使用的协议是ICMP，不是TCP或UDP</span><br><span class="line">ftp &lt;$IP|$DOMAIN&gt;</span><br><span class="line">wget &lt;$IP|$DOMAIN&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="重启"><a href="#重启" class="headerlink" title="重启"></a>重启</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">service network-manager restart		# Ubuntu</span><br><span class="line">service networking restart			# Debian</span><br><span class="line">systemctl restart systemd-resolved.service</span><br><span class="line">systemctl restart NetworkManager.service</span><br></pre></td></tr></table></figure>
+
+<h3 id="查看状态"><a href="#查看状态" class="headerlink" title="查看状态"></a>查看状态</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">systemd-resolve --status		# 会报错</span><br><span class="line">systemctl status systemd-resolved.service</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="其他命令"><a href="#其他命令" class="headerlink" title="其他命令"></a>其他命令</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps -ef | grep process_name	# 列出系统中当前运行的名字包含process_name的进程</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">uname -a	# unix name：显示电脑以及操作系统的相关信息，或者</span><br><span class="line">uname -r	# 查看linux内核版本</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod -R 777 file_foder_name	# 修改文件或文件夹的权限</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">man command_name	# 查看命令的帮助文件</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">echo $PATH		# 查看环境变量PATH</span><br><span class="line">env				# 查看环境变量</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="scp-命令"><a href="#scp-命令" class="headerlink" title="scp 命令"></a>scp 命令</h3><p>功能：跨服务器加密传文件</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 在windows系统的cmd中</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> win -&gt; linux</span></span><br><span class="line">scp -r E:\file_foder_name debian@192.168.137.2:/home/AA/BB	# 跨服务器加密复制文件夹</span><br><span class="line">scp E:\AA\BB\filename debian@192.168.137.2:/home/AA/BB		# 跨服务器加密复制文件</span><br><span class="line"><span class="meta">#</span><span class="bash"> (win请求)linux -&gt; win</span></span><br><span class="line">scp -r debian@192.168.137.2:/home/AA/BB	E:\file_foder_name 	# 跨服务器加密复制文件夹</span><br><span class="line">scp debian@192.168.137.2:/home/AA/BB E:\AA\BB\filename		# 跨服务器加密复制文件</span><br></pre></td></tr></table></figure>
+
+<h3 id="ln-命令"><a href="#ln-命令" class="headerlink" title="ln 命令"></a>ln 命令</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ln filename filename_lnk		# 建立硬链接（Hard Link）</span><br><span class="line">ln -s filename filename_lnk		# 建立软连接（Symbolic Link，符号链接）</span><br></pre></td></tr></table></figure>
+
+<p>软硬链接的区别：<a target="_blank" rel="noopener" href="https://blog.csdn.net/yagamil/article/details/40076509">https://blog.csdn.net/yagamil/article/details/40076509</a></p>
+<h3 id="find-命令"><a href="#find-命令" class="headerlink" title="find 命令"></a>find 命令</h3><p>看手册</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find &lt;路径&gt; -name &quot;filename*&quot; -size +100k -print</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">-iname	# 忽略大小写</span><br><span class="line">-mindepth</span><br><span class="line">-maxdepth</span><br></pre></td></tr></table></figure>
+
+<h3 id="xargs-命令"><a href="#xargs-命令" class="headerlink" title="xargs 命令"></a>xargs 命令</h3><p>和find命令配合使用，见find手册 </p>
+<h3 id="tar-命令"><a href="#tar-命令" class="headerlink" title="tar 命令"></a>tar 命令</h3><h4 id="tar-gz"><a href="#tar-gz" class="headerlink" title="tar.gz"></a>tar.gz</h4><p>压缩：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zcvf 压缩文件名.tar.gz 被压缩文件名</span><br></pre></td></tr></table></figure>
+
+<p>解压缩：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf 压缩文件名.tar.gz -C 解压路径（不含文件名）</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>各参数含义：</p>
+<p>-z：有gzip属性的</p>
+<p>-x：解压</p>
+<p>-v：显示所有过程</p>
+<p>-f：使用档案名字（放最后）</p>
+<p>参考：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/manong--/p/8012324.html">https://www.cnblogs.com/manong--/p/8012324.html</a></p>
+</blockquote>
+<h4 id="tar"><a href="#tar" class="headerlink" title="tar"></a>tar</h4><p>解压：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -xvf file.tar</span><br></pre></td></tr></table></figure>
+
+<h4 id="systemctl"><a href="#systemctl" class="headerlink" title="systemctl"></a>systemctl</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">systemctl list-units            ##列出当前系统服务的状态</span><br><span class="line"></span><br><span class="line">systemctl list-unit-files       ##列出服务的开机状态</span><br><span class="line"></span><br><span class="line">systemctl status sshd           ##查看指定服务的状态</span><br><span class="line"></span><br><span class="line">systemctl stop sshd             ##关闭指定服务</span><br><span class="line"></span><br><span class="line">systemctl start sshd            ##开启指定服务</span><br><span class="line"></span><br><span class="line">systemctl restart sshd          ##从新启动服务</span><br><span class="line"></span><br><span class="line">systemctl enable sshd           ##设定指定服务开机开启</span><br><span class="line"></span><br><span class="line">systemctl disable sshd          ##设定指定服务开机关闭</span><br><span class="line"></span><br><span class="line">systemctl reload sshd           ##使指定服务从新加载配置</span><br><span class="line"></span><br><span class="line">systemctl list-dependencies sshd    ##查看指定服务的倚赖关系</span><br><span class="line"></span><br><span class="line">systemctl mask  sshd            ##冻结指定服务</span><br><span class="line"></span><br><span class="line">systemctl unmask sshd           ##启用服务</span><br><span class="line"></span><br><span class="line">systemctl set-default multi-user.target ##开机不开启图形</span><br><span class="line"></span><br><span class="line">systemctl set-default graphical.target  ##开机启动图形</span><br><span class="line"></span><br><span class="line">setterm                 ##文本界面设定color</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="常用软件包及命令"><a href="#常用软件包及命令" class="headerlink" title="常用软件包及命令"></a>常用软件包及命令</h2><h3 id="tree"><a href="#tree" class="headerlink" title="tree"></a>tree</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tree	# 显示目录树</span><br></pre></td></tr></table></figure>
+
+<h3 id="shawdowsocks"><a href="#shawdowsocks" class="headerlink" title="shawdowsocks"></a>shawdowsocks</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sslocal -c /home/burgess/shadowsocks.conf -d start		# 开启梯子</span><br><span class="line">sslocal -c /home/burgess/shadowsocks.conf -d stop		# 关闭梯子</span><br><span class="line">sslocal -s server.com -p 8388 -k password				# 添加或修改参数</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>注意中间替换成配置文件的路径（burgess是用户名）</li>
+</ul>
+<h2 id="一次性配置命令"><a href="#一次性配置命令" class="headerlink" title="一次性配置命令"></a>一次性配置命令</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo cp .bashrc /root/.bashrc	# 在普通用户模式下使用。会使root模式下也有配色。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo passwd	# 修改root密码，要先输入当前用户登录密码</span><br></pre></td></tr></table></figure>
+
+<h1 id="Linux-常用快捷键"><a href="#Linux-常用快捷键" class="headerlink" title="Linux 常用快捷键"></a>Linux 常用快捷键</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">ctrl+a ： 光标移动到命令行开头</span><br><span class="line">ctrl+e ： 光标移动到命令行结尾</span><br><span class="line">ctrl+c ： 强制终止当前命令</span><br><span class="line">ctrl+l ： 剪切光标之前的内容</span><br><span class="line">ctrl+k ： 剪切光标之后的内容</span><br><span class="line">ctrl+y ： 粘贴ctrl+l或ctrl+k剪切的内容</span><br><span class="line">ctrl+r ： 搜索历史命令</span><br><span class="line">ctrl+d ： 关闭当前终端</span><br><span class="line">ctrl+z ： 暂停并放入后台</span><br><span class="line">ctrl+s ： 暂停屏幕输出</span><br><span class="line">ctrl+q ： 恢复屏幕输出</span><br></pre></td></tr></table></figure>
+
+<h1 id="Linux-通配符和其他特殊符号"><a href="#Linux-通配符和其他特殊符号" class="headerlink" title="Linux 通配符和其他特殊符号"></a>Linux 通配符和其他特殊符号</h1><h2 id="通配符"><a href="#通配符" class="headerlink" title="通配符"></a>通配符</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">？ ：匹配一个任意字符</span><br><span class="line"></span><br><span class="line">* ：匹配零个或多个任意字符</span><br><span class="line"></span><br><span class="line">[] ：匹配中括号内的任意一个字符</span><br><span class="line"></span><br><span class="line">[-] ：匹配范围内的任意一个字符</span><br><span class="line"></span><br><span class="line">[^] ：匹配后取反</span><br></pre></td></tr></table></figure>
+
+<h2 id="特殊符号"><a href="#特殊符号" class="headerlink" title="特殊符号"></a>特殊符号</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#x27;&#x27;	：原封不动输出</span><br><span class="line">&quot;&quot;	：$、`和\有特殊含义</span><br><span class="line">``	：``中是系统命令。bash会先执行其中的命令</span><br><span class="line">$()	：与``一样，不容易看错</span><br><span class="line">#	：注释</span><br><span class="line">$	：调用变量的值。或$&#123;&#125;</span><br><span class="line">\	：转义符。取消特殊符号的特殊含义</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="Linux-正则表达式"><a href="#Linux-正则表达式" class="headerlink" title="Linux 正则表达式"></a>Linux 正则表达式</h1><ul>
+<li>正则表达式 不等于 通配符（wildcard）</li>
+<li>正则表达式分基础的正则表达式（BRE，Basic Regexp）和扩展的正则表达式（ERE，Extended Regexp）</li>
+<li>转义符<code>\</code>能将正则表达式字符变成普通字符</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">*		前一个字符匹配0次或任意多次.</span><br><span class="line">.		匹配除了换行符外任意一个字符.</span><br><span class="line">^		匹配行首. 例如：^hello 会匹配以 hello 开头的行.</span><br><span class="line">$		匹配行尾. 例如：hello$ 会匹配以 hello 结尾的行.</span><br><span class="line">[]		匹配中括号中指定的任意一个字符，制匹配一个字符. 例如：[aoeiu] 匹配任意一个元音字母，[0-9] 匹配任意一位数字，[a-z][0-9]匹配小写字和一位数字构成的两位字符.</span><br><span class="line">[^]		匹配除中括号的字符以外的任意一个字符. 例如：[^0-9] 匹配任意一位非数字字符，[^a-z] 表示任意一位非小写字母.</span><br><span class="line">\		转义符. 用于取消特殊符号的含义.</span><br><span class="line">\&#123;n\&#125;	表示其前面的字符恰好出现 n 次. 例如：[0-9]\&#123;4\&#125; 匹配 4 位数字，[1][3-8][0-9]\&#123;9\&#125; 匹配手机号码.</span><br><span class="line">\&#123;n,\&#125;	表示其前面的字符出现不小于 n 次. 例如：[0-9]\&#123;2,\&#125;表示两位及以上的数字.</span><br><span class="line">\&#123;n,m\&#125;	表示其前面的字符至少出现 n 次，最多出现 m 次. 例如：[a-z]\&#123;6,8\&#125; 匹配6到8位的小写字母.</span><br></pre></td></tr></table></figure>
+
+<h1 id="Linux-输入输出重定向"><a href="#Linux-输入输出重定向" class="headerlink" title="Linux 输入输出重定向"></a>Linux 输入输出重定向</h1><table>
+<thead>
+<tr>
+<th>设备</th>
+<th>设备文件名</th>
+<th>文件描述符</th>
+<th>类型</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>键盘</td>
+<td>/dev/stdin</td>
+<td>0</td>
+<td>标准输入</td>
+</tr>
+<tr>
+<td>显示器</td>
+<td>/dev/stdout</td>
+<td>1</td>
+<td>标准输出</td>
+</tr>
+<tr>
+<td>显示器</td>
+<td>/dev/stderr</td>
+<td>2</td>
+<td>标准错误输出</td>
+</tr>
+</tbody></table>
+<h2 id="输出重定向"><a href="#输出重定向" class="headerlink" title="输出重定向"></a>输出重定向</h2><p>标准输出重定向</p>
+<ul>
+<li><code>命令 &gt; 文件</code> ：以覆盖的方式写入命令的正确输出</li>
+<li><code>命令 &gt;&gt; 文件</code> ：以追加的方式写入命令的正确输出</li>
+</ul>
+<p>标准错误输出重定向</p>
+<ul>
+<li><code>错误命令 2&gt; 文件</code> ：以覆盖的方式写入命令的错误输出</li>
+<li><code>错误命令 2&gt;&gt; 文件</code> ：以追加的方式写入命令的错误输出</li>
+</ul>
+<p>将正确输出和错误输出都保存在同一个文件中</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">命令 &gt; 文件 2&gt;&amp;1</span><br><span class="line">命令 &gt;&gt; 文件 2&gt;&amp;1</span><br><span class="line">命令 &amp;&gt; 文件</span><br><span class="line">命令 &amp;&gt;&gt; 文件</span><br></pre></td></tr></table></figure>
+
+<p>将正确输出和错误输出分开保存</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">命令 &gt; 文件1 2&gt; 文件2</span><br><span class="line">命令 &gt;&gt; 文件1 2&gt;&gt; 文件2</span><br></pre></td></tr></table></figure>
+
+<p>不输出</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">命令 &amp;&gt; /dev/null</span><br></pre></td></tr></table></figure>
+
+<h2 id="输入重定向"><a href="#输入重定向" class="headerlink" title="输入重定向"></a>输入重定向</h2><p>eg：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wc					# 键盘输入，统计行数等。按 ctrl+d 结束输入</span><br><span class="line">wc -l &lt; hello.txt	# 统计 hello.txt 文件的行数</span><br><span class="line">wc &lt;&lt; hello			# 用得很少，将键盘输入给wc命令，以hello为输入结束符</span><br></pre></td></tr></table></figure>
+
+<h1 id="多命令顺序执行与管道符"><a href="#多命令顺序执行与管道符" class="headerlink" title="多命令顺序执行与管道符"></a>多命令顺序执行与管道符</h1><p>;</p>
+<p>&amp;&amp;</p>
+<p>||</p>
+<p>dd 命令</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dd if=infile of=outfile bs=bytes count=bytesnum</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">命令 &amp;&amp; echo yes || echo no</span><br></pre></td></tr></table></figure>
+
+<h1 id="shell-变量"><a href="#shell-变量" class="headerlink" title="shell 变量"></a>shell 变量</h1><p>变量不能以数字开头</p>
+<p>bash中变量类型默认为字符串</p>
+<p>变量的值有空格，需要用单引号或双引号括起来</p>
+<p>变量分类</p>
+<ul>
+<li>用户自定义变量</li>
+<li>环境变量</li>
+<li>位置参数变量：向脚本当中传递参数或数据的，变量名不能自定义，变量的作用固定</li>
+<li>预定义变量：Bash中定义好的变量，变量名不能自定义，变量的作用固定</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">echo $varname	# 变量调用</span><br><span class="line">set				# 查看所有变量</span><br><span class="line">unset varname	# 删除变量</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="Linux-Shell-脚本简介"><a href="#Linux-Shell-脚本简介" class="headerlink" title="Linux Shell 脚本简介"></a>Linux Shell 脚本简介</h1><p>硬件-内核-shell-应用程序</p>
+<p>分类：</p>
+<ul>
+<li><p>Bourne shell 系列：sh、ksh、bash、psh、zsh</p>
+</li>
+<li><p>C shell 系列：csh、tcsh</p>
+</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /etc/shells		# 查看支持的shell</span><br></pre></td></tr></table></figure>
+
+<p>shell 脚本文件头：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#！/bin/bash</span><br></pre></td></tr></table></figure>
+
+<p>执行方法：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">chmod 755 hello.sh</span><br><span class="line">./hello.sh</span><br><span class="line"><span class="meta">#</span><span class="bash"> 或者</span></span><br><span class="line">bash hello.sh	# 不需要执行权限就能执行</span><br></pre></td></tr></table></figure>
+
+<p>echo命令</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">echo -e &quot;\e[1;31mabcd\e[0m&quot;	# 红色输出abcd</span><br><span class="line"><span class="meta">#</span><span class="bash"> 30m=黑色，31m=红色，32m=绿色，33m=黄色</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 34m=蓝色，35m=洋红，36m=青色，37m=白色</span></span><br></pre></td></tr></table></figure>
+
+<p>注意 Linux 中的 shell 脚本回车符默认为 <code>$</code>，而 Windows 中默认为 <code>^M$</code></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat -A hello.sh		# 打印文件内容，包括隐藏符号</span><br></pre></td></tr></table></figure>
+
+<p>转换文件可用 <code>dos2unix</code> 或 <code>unix2dos</code> 软件</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dos2unix hello.sh</span><br><span class="line">unix2dos hello.sh</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>更多内容见 <code>shell 脚本命令学习</code></p>
+</blockquote>
+<h1 id="Linux-相关问题"><a href="#Linux-相关问题" class="headerlink" title="Linux 相关问题"></a>Linux 相关问题</h1><h2 id="git-clone-下载的文件夹无法移动"><a href="#git-clone-下载的文件夹无法移动" class="headerlink" title="git clone 下载的文件夹无法移动"></a>git clone 下载的文件夹无法移动</h2><p>git clone之前忘记cd到合适的位置了，于是clone完之后想通过mv命令将文件夹移到它的上一级目录，但提示Permission denied，于是root模式下加了777权限，也不行，不知道为什么，最后删了重新下载。</p>
+<h2 id="更换软件源"><a href="#更换软件源" class="headerlink" title="更换软件源"></a>更换软件源</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo cp /etc/apt/sources.list /etc/apt/sources.list.backup</span><br><span class="line">vim /etc/apt/sources.list</span><br></pre></td></tr></table></figure>
+
+<p>然后将原有内容注释掉或删掉，再粘贴新的源即可。清华的debian镜像源如下</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释</span></span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster main contrib non-free</span><br><span class="line"><span class="meta">#</span><span class="bash"> deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster main contrib non-free</span></span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-updates main contrib non-free</span><br><span class="line"><span class="meta">#</span><span class="bash"> deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-updates main contrib non-free</span></span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-backports main contrib non-free</span><br><span class="line"><span class="meta">#</span><span class="bash"> deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-backports main contrib non-free</span></span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/debian-security buster/updates main contrib non-free</span><br><span class="line"><span class="meta">#</span><span class="bash"> deb-src https://mirrors.tuna.tsinghua.edu.cn/debian-security buster/updates main contrib non-free</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="手机-USB-共享网络"><a href="#手机-USB-共享网络" class="headerlink" title="手机 USB 共享网络"></a>手机 USB 共享网络</h2><p>手机网络设置<code>通过USB共享网络</code>。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ifconfig	# 或 ip a 查看手机usb网卡名称，假设为usb0</span><br><span class="line">sudo dhclient usb0</span><br></pre></td></tr></table></figure>
+
+<h2 id="git-clone-速度太慢"><a href="#git-clone-速度太慢" class="headerlink" title="git clone 速度太慢"></a>git clone 速度太慢</h2><p>方法有以下几种：</p>
+<ol>
+<li>若是 https，则在 <code>github.com</code> 后面加 <code>.cnpmjs.org</code>。</li>
+<li>把 https 换成 git</li>
+</ol>
+<h2 id="永久配置-DNS"><a href="#永久配置-DNS" class="headerlink" title="永久配置 DNS"></a>永久配置 DNS</h2><p>永久停止Ubuntu默认dns本地服务</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl disable --now systemd-resolved</span><br><span class="line">vim /etc/NetworkManager/NetworkManager.conf</span><br></pre></td></tr></table></figure>
+<p>修改NetworkManager：在[main]节点下增加如下配置：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dns=none  # none 不会生成dns配置到/etc/resolve.conf，default 则会生成</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>设置default，否则每次重启会被系统自动重置/etc/resolve.conf为nameserver 127.0.0.53</p>
+</blockquote>
+<p>重启NetworkManager：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl restart NetworkManager</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>如果不行，删除 /etc/resolv.conf 文件（红色，符号链接到的源文件不存在），然后再重启网络，resolv.conf 文件会自动生成</p>
+</blockquote>
+<h2 id="Ubuntu20-04-中文输入法"><a href="#Ubuntu20-04-中文输入法" class="headerlink" title="Ubuntu20.04 中文输入法"></a>Ubuntu20.04 中文输入法</h2><p>目标：想在不改变系统语言（英文）的情况下安装系统自带的中文输入法。</p>
+<ol>
+<li><p>安装语言支持</p>
+<p><code>Settings</code> &gt; <code>Region &amp; Language</code> &gt; <code>Manage Installed Languages</code> &gt; <code>Install / Remove Languages</code> &gt; <code>Chinese (Simplified)</code> &gt; <code>Apply</code> ，将 <code>Chinese (Simplified)</code> 拖到 <code>English</code> 上方使其不变灰。然后<code>Keyboard input method system</code> &gt; <code>IBus</code> &gt; <code>Close</code>。</p>
+<p>注意：添加完简体中文后，键盘布局中才能找到 <code>Chinese (Intelligent Pinyin)</code>。</p>
+</li>
+<li><p>添加键盘布局（输入方法）</p>
+<p><code>Settings</code> &gt; <code>Region &amp; Language</code> &gt; <code>Input Sources</code> &gt; <code>+</code> &gt; <code>Chinese</code> &gt; <code>Chinese (Intelligent Pinyin)</code> &gt; <code>Add</code>。</p>
+</li>
+<li><p>设置系统语言（即终端、桌面和其他软件的语言）</p>
+<p><code>Settings</code> &gt; <code>Region &amp; Language</code> &gt; <code>Language</code> &gt; <code>English</code>（随便哪一个都可以）。</p>
+</li>
+<li><p>重启。</p>
+</li>
+</ol>
+<p>平时切换输入法快捷方式为 <code>Win</code> + <code>空格</code>。</p>
+</div><div class="article-licensing box"><div class="licensing-title"><p>Linux 常用命令及相关问题</p><p><a href="https://burgessx.github.io/2021/02/27/2346.html">https://burgessx.github.io/2021/02/27/2346.html</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>BurgessX</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2021-02-27</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2021-07-26</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/Linux/">Linux</a><a class="link-muted mr-2" rel="tag" href="/tags/Vim/">Vim</a></div><div class="notification is-danger">You need to set <code>install_url</code> to use ShareThis. Please set it in <code>_config.yml</code>.</div></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3><div class="buttons is-centered"><a class="button donate" href="/" target="_blank" rel="noopener" data-type="afdian"><span class="icon is-small"><i class="fas fa-charging-station"></i></span><span>爱发电</span></a><a class="button donate" data-type="alipay"><span class="icon is-small"><i class="fab fa-alipay"></i></span><span>支付宝</span><span class="qrcode"><img src="/" alt="支付宝"></span></a><a class="button donate" href="/" target="_blank" rel="noopener" data-type="buymeacoffee"><span class="icon is-small"><i class="fas fa-coffee"></i></span><span>送我杯咖啡</span></a><a class="button donate" href="/" target="_blank" rel="noopener" data-type="patreon"><span class="icon is-small"><i class="fab fa-patreon"></i></span><span>Patreon</span></a><div class="notification is-danger">You forgot to set the <code>business</code> or <code>currency_code</code> for Paypal. Please set it in <code>_config.yml</code>.</div><a class="button donate" data-type="wechat"><span class="icon is-small"><i class="fab fa-weixin"></i></span><span>微信</span><span class="qrcode"><img src="/" alt="微信"></span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/2021/07/29/1627.html"><i class="level-item fas fa-chevron-left"></i><span class="level-item">Windows问题与解决方法</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2021/02/27/0000.html"><span class="level-item">OpenVLC 可行性测试报告</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><div class="notification is-danger">You forgot to set the <code>shortname</code> for Disqus. Please set it in <code>_config.yml</code>.</div></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/img/avatar.png" alt="Your name"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Your name</p><p class="is-size-6 is-block">Your title</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Your location</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">25</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">10</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">17</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/ppoffice" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/ppoffice"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Facebook" href="https://facebook.com"><i class="fab fa-facebook"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Twitter" href="https://twitter.com"><i class="fab fa-twitter"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Dribbble" href="https://dribbble.com"><i class="fab fa-dribbble"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="RSS" href="/"><i class="fas fa-rss"></i></a></div></div></div><!--!--><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">链接</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://hexo.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Hexo</span></span><span class="level-right"><span class="level-item tag">hexo.io</span></span></a></li><li><a class="level is-mobile" href="https://bulma.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Bulma</span></span><span class="level-right"><span class="level-item tag">bulma.io</span></span></a></li></ul></div></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/Git/"><span class="level-start"><span class="level-item">Git</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/HTML/"><span class="level-start"><span class="level-item">HTML</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/Latex/"><span class="level-start"><span class="level-item">Latex</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/Linux/"><span class="level-start"><span class="level-item">Linux</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/categories/Python/"><span class="level-start"><span class="level-item">Python</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/ROS/"><span class="level-start"><span class="level-item">ROS</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/SLAM/"><span class="level-start"><span class="level-item">SLAM</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/VLC/"><span class="level-start"><span class="level-item">VLC</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/%E7%94%B5%E8%84%91%E6%95%85%E9%9A%9C/"><span class="level-start"><span class="level-item">电脑故障</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/categories/%E8%AF%BE%E7%A8%8B/"><span class="level-start"><span class="level-item">课程</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-08-05T18:01:34.703Z">2021-08-06</time></p><p class="title"><a href="/2021/08/06/0201.html">电工笔记</a></p><p class="categories"><a href="/categories/%E8%AF%BE%E7%A8%8B/">课程</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-08-05T18:01:34.701Z">2021-08-06</time></p><p class="title"><a href="/2021/08/06/0201.html">电子技术笔记</a></p><p class="categories"><a href="/categories/%E8%AF%BE%E7%A8%8B/">课程</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-08-05T18:01:34.699Z">2021-08-06</time></p><p class="title"><a href="/2021/08/06/0201.html">大学物理笔记</a></p><p class="categories"><a href="/categories/%E8%AF%BE%E7%A8%8B/">课程</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-08-05T18:01:34.686Z">2021-08-06</time></p><p class="title"><a href="/2021/08/06/0201.html">在 BIOS 中将 SATA 改为 AHCI 后重启蓝屏</a></p><p class="categories"><a href="/categories/%E7%94%B5%E8%84%91%E6%95%85%E9%9A%9C/">电脑故障</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-08-05T18:01:34.682Z">2021-08-06</time></p><p class="title"><a href="/2021/08/06/0201.html">Win10 频繁开启代理导致断网问题</a></p><p class="categories"><a href="/categories/%E7%94%B5%E8%84%91%E6%95%85%E9%9A%9C/">电脑故障</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2021/08/"><span class="level-start"><span class="level-item">八月 2021</span></span><span class="level-end"><span class="level-item tag">22</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/07/"><span class="level-start"><span class="level-item">七月 2021</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/02/"><span class="level-start"><span class="level-item">二月 2021</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/Beaglebone/"><span class="tag">Beaglebone</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Git/"><span class="tag">Git</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/HTML/"><span class="tag">HTML</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Latex/"><span class="tag">Latex</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Linux/"><span class="tag">Linux</span><span class="tag">5</span></a></div><div class="control"><a class="tags has-addons" href="/tags/PHP/"><span class="tag">PHP</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Python/"><span class="tag">Python</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/ROS/"><span class="tag">ROS</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/SLAM/"><span class="tag">SLAM</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Shell/"><span class="tag">Shell</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/TODO/"><span class="tag">TODO</span><span class="tag">8</span></a></div><div class="control"><a class="tags has-addons" href="/tags/VLC/"><span class="tag">VLC</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Vim/"><span class="tag">Vim</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%9C%BA%E6%A2%B0%E8%87%82/"><span class="tag">机械臂</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%94%B5%E8%84%91%E6%95%85%E9%9A%9C/"><span class="tag">电脑故障</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%BD%91%E7%BB%9C/"><span class="tag">网络</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E8%AF%BE%E7%A8%8B/"><span class="tag">课程</span><span class="tag">3</span></a></div></div></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">订阅更新</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="订阅"></div></div></form></div></div></div><div class="card widget"><div class="card-content"><div class="notification is-danger">You need to set <code>client_id</code> and <code>slot_id</code> to show this AD unit. Please set it in <code>_config.yml</code>.</div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">follow.it</h3><form action="" method="post" target="_blank"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="订阅"></div></div></form></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.svg" alt="BurgessX&#039;s Blog" height="28"></a><p class="is-size-7"><span>&copy; 2021 BurgessX</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>
