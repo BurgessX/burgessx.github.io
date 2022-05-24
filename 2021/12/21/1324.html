@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>RSA 算法 - BurgessX&#039;s Blog</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="BurgessX&#039;s Blog"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="BurgessX&#039;s Blog"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="参考：RSA算法原理 - 知乎 (zhihu.com)"><meta property="og:type" content="blog"><meta property="og:title" content="RSA 算法"><meta property="og:url" content="https://burgessx.github.io/2021/12/21/1324.html"><meta property="og:site_name" content="BurgessX&#039;s Blog"><meta property="og:description" content="参考：RSA算法原理 - 知乎 (zhihu.com)"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://burgessx.github.io/img/og_image.png"><meta property="article:published_time" content="2021-12-21T05:24:00.000Z"><meta property="article:modified_time" content="2022-05-24T08:26:09.912Z"><meta property="article:author" content="BurgessX"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://burgessx.github.io/2021/12/21/1324.html"},"headline":"RSA 算法","image":["https://burgessx.github.io/img/og_image.png"],"datePublished":"2021-12-21T05:24:00.000Z","dateModified":"2022-05-24T08:26:09.912Z","author":{"@type":"Person","name":"BurgessX"},"publisher":{"@type":"Organization","name":"BurgessX's Blog","logo":{"@type":"ImageObject","url":{"text":"BurgessX"}}},"description":"参考：RSA算法原理 - 知乎 (zhihu.com)"}</script><link rel="canonical" href="https://burgessx.github.io/2021/12/21/1324.html"><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/github.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 5.4.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/">BurgessX</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2021-12-21T05:24:00.000Z" title="2021/12/21 下午1:24:00">2021-12-21</time>发表</span><span class="level-item"><time dateTime="2022-05-24T08:26:09.912Z" title="2022/5/24 下午4:26:09">2022-05-24</time>更新</span><span class="level-item">9 分钟读完 (大约1370个字)</span></div></div><h1 class="title is-3 is-size-4-mobile">RSA 算法</h1><div class="content"><blockquote>
+<p>参考：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/48249182">RSA算法原理 - 知乎 (zhihu.com)</a></p>
+</blockquote>
+<span id="more"></span>
+
+<h1 id="数论基础"><a href="#数论基础" class="headerlink" title="数论基础"></a>数论基础</h1><p>素数（略）、模运算、互质关系、欧拉函数</p>
+<h2 id="模运算"><a href="#模运算" class="headerlink" title="模运算"></a>模运算</h2><p>等式 $a\equiv b,(\bmod n)$ 等价于 $a \operatorname{mod} n=b\operatorname{mod} n$，当 $a&gt;b$ 时等价于 $a=kn+b$。</p>
+<h2 id="互质关系"><a href="#互质关系" class="headerlink" title="互质关系"></a>互质关系</h2><p>关于互质关系，不难得到以下结论：</p>
+<ul>
+<li>任意两个质数构成互质关系，比如 13 和 61。</li>
+<li>一个数是质数，另一个数只要不是前者的倍数，两者就构成互质关系，比如 3 和 10。</li>
+<li>如果两个数之中，较大的那个数是质数，则两者构成互质关系，比如 97 和 57。</li>
+<li>1 和任意一个自然数是都是互质关系，比如 1 和 99。</li>
+<li>$p$ 是大于 1 的整数，则 $p$ 和 $p-1$ 构成互质关系，比如 57 和 56。</li>
+<li>$p$ 是大于 1 的奇数，则 $p$ 和 $p-2$ 构成互质关系，比如 17 和 15。</li>
+</ul>
+<h2 id="欧拉函数"><a href="#欧拉函数" class="headerlink" title="欧拉函数"></a>欧拉函数</h2><p>定义：任意给定正整数 $n$，在小于等于 $n$ 的正整数之中，与 $n$ 构成互质关系的数的个数为 $\phi(n)$<br>$$<br>\phi(n)=\left{<br>\begin{array}{ll}<br>1,&amp; n=1\<br>n-1, &amp;\text{$n$为素数}\<br>p^{k}-p^{k-1}, &amp;\text{$n=p^k$, $p$ 为质数, $k$ 为大于等于1的整数}\<br>\phi(p_1)\phi(p_2), &amp;\text{$n=p_1p_2$, $p_1$ 和 $p_2$ 为素数}\<br>\phi(p_{1}^{k_1})\phi(p_{2}^{k_2})\ldots\phi(p_{r}^{k_r}), &amp;\text{其他, $p_i$ 为素数}<br>\end{array}</p>
+<p>\right.<br>$$<br>欧拉函数的通用计算公式：<br>$$<br>\phi(n)=n\left(1-\frac{1}{p_{1}}\right)\left(1-\frac{1}{p_{2}}\right) \ldots\left(1-\frac{1}{p_{r}}\right)<br>$$</p>
+<h2 id="欧拉定理"><a href="#欧拉定理" class="headerlink" title="欧拉定理"></a>欧拉定理</h2><p>如果两个正整数 $a$ 和 $n$ 互质，则 $n$ 的欧拉函数 $\varphi(n)$ 可以让下面的等式成立：<br>$$<br>a^{\phi(n)} \equiv 1,(\bmod n)<br>$$<br>为了后续证明方便，这里给出两个定理</p>
+<blockquote>
+<p><strong>定理 1</strong>  如果两个正整数 $a$ 和 $n$ 满足 $a^{\phi(n)}\equiv1,(\bmod n)$，则 $a^{k\phi(n)}\equiv1,(\bmod n)$ 对任意正整数 $k$ 成立。</p>
+</blockquote>
+<blockquote>
+<p><strong>费马小定理（欧拉定理的特殊情况）</strong> 如果 $a$ 为正整数，$p$ 为素数，由于 $\phi(p)=p-1$，故 $a^{p-1}\equiv,(\bmod p)$</p>
+</blockquote>
+<h2 id="模反元素"><a href="#模反元素" class="headerlink" title="模反元素"></a>模反元素</h2><p>如果两个正整数 $a$ 和 $n$ 互质，那么一定可以找到整数 $b$，使得 $ab-1$ 被 $n$ 整除，或者说 $ab$ 被 $n$ 除的余数是1，即<br>$$<br>ab\equiv 1,(\bmod n)<br>$$<br>这里的 $b$ 称为 $a$ 的<strong>模反元素</strong>（也叫<strong>模逆元</strong>）。显然，模反元素不止一个。</p>
+<p>由欧拉定理得<br>$$<br>a^{\phi(n)}=a \times a^{\phi(n)-1} \equiv 1,(\bmod n)<br>$$<br>故 $a$ 的模反元素必定存在，且为 $a^{\phi(n)-1}$。</p>
+<h3 id="模反元素的计算"><a href="#模反元素的计算" class="headerlink" title="模反元素的计算"></a>模反元素的计算</h3><p>因为 $ab\equiv 1,(\bmod n)$ 等价于 $ab-1=k\phi(n)$（为什么？），即 $ab-k\phi(n)=1$，令 $x=b$，$y=-k$，则<br>$$<br>ax+\phi(n)y=1<br>$$<br>其中 $\phi(n)$ 已知，因此为一个二元一次方程，可以用<a href="https://link.zhihu.com/?target=https://zh.wikipedia.org/wiki/%E6%89%A9%E5%B1%95%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95">“扩展欧几里得算法”(又叫辗转相除法)</a>求解。</p>
+<h1 id="RSA-算法"><a href="#RSA-算法" class="headerlink" title="RSA 算法"></a>RSA 算法</h1><h2 id="密钥生成"><a href="#密钥生成" class="headerlink" title="密钥生成"></a>密钥生成</h2><ol>
+<li><p>随机生成两个不相等的素数 $p$ 和 $q$</p>
+</li>
+<li><p>计算 $n=pq$</p>
+<ul>
+<li>用二进制表示的 $n$ 位数即为密钥长度 $l$</li>
+</ul>
+</li>
+<li><p>计算 $n$ 的欧拉函数 $\phi(n)=\phi(pq)=\phi(p)\phi(q)=(p-1)(q-1)$</p>
+</li>
+<li><p>随机生成整数 $e$，满足：与 $\phi(n)$ 互质，$1&lt;e&lt;\phi(n)$</p>
+</li>
+<li><p>计算 $e$ 对于 $\phi(n)$ 的模反元素 $d$，即根据 $ed\equiv 1,(\bmod \phi(n))$ 求 $d$</p>
+</li>
+<li><p>公钥为 $(n,e)$，私钥为 $(n,d)$</p>
+<blockquote>
+<ul>
+<li>$e$ 表示 encrypt，$d$ 表示 decrypt</li>
+<li>实际应用中，公钥和私钥的数据都采用 <a href="https://link.zhihu.com/?target=https://zh.wikipedia.org/zh-cn/ASN.1">ASN.1</a> 格式表达。</li>
+</ul>
+</blockquote>
+</li>
+</ol>
+<h2 id="加密与解密"><a href="#加密与解密" class="headerlink" title="加密与解密"></a>加密与解密</h2><h3 id="加密-Enc-m-n-e-c"><a href="#加密-Enc-m-n-e-c" class="headerlink" title="加密 Enc(m,n,e)=c"></a>加密 Enc(m,n,e)=c</h3><p>假设明文信息为 $m$，且 $m&lt;n$。利用公钥 $(n,e)$ 进行加密生成密文 $c$：<br>$$<br>m^e\equiv c,(\bmod n)<br>$$</p>
+<h3 id="解密-Dec-m-n-d-m"><a href="#解密-Dec-m-n-d-m" class="headerlink" title="解密 Dec(m,n,d)=m"></a>解密 Dec(m,n,d)=m</h3><p>利用私钥 $(n,d)$ 进行解密得到明文 $m$：<br>$$<br>c^d\equiv m,(\bmod n)<br>$$</p>
+<h2 id="正确性证明"><a href="#正确性证明" class="headerlink" title="正确性证明"></a>正确性证明</h2><p>问题：已知 $n=pq$，$ed\equiv 1,(\bmod \phi(n))$，$\operatorname{gcd}(e,\phi(n))$ 和 $m^e\equiv c,(\bmod n)$，证明 $c^d\equiv m,(\bmod n)$</p>
+<blockquote>
+<p>即证明 ${\rm Dec}(m,n,{\rm Enc}(m,n,e))=m$</p>
+</blockquote>
+<p>因为 $m^e\equiv c,(\bmod n)$，所以 $c=m^e-kn$，代入解密的式子，知只需证 $(m^e-kn)^d\equiv m,(\bmod n)$。</p>
+<p>因为有 $kn$ 的项都能被 $n$ 整除，故只需证 $m^{ed}\equiv m,(\bmod n)$。</p>
+<p>由 $ed\equiv 1,(\bmod \phi(n))$ 得 $ed=h\phi(n)+1$，故只需证 $m^{h\phi(n)+1}\equiv m,(\bmod n)$</p>
+<ol>
+<li><p>当 $m$ 与 $n$ 互质时</p>
+<p>由欧拉定理可知 $m^{\phi(n)}\equiv 1,(\bmod n)$，又由 定理 1 可知 $m^{h\phi(n)}\equiv 1,(\bmod n)$。由加密规则知 $m&lt;n$，故 $m^{h\phi(n)+1}\equiv m,(\bmod n)$，得证。</p>
+</li>
+<li><p>当 $m$ 与 $n$ 不互质时</p>
+<p>由于 $n=pq$（$p$ 和 $q$ 为素数）且 $m&lt;n$，故 $m=k_1p$（$k_1&lt;q$） 或 $m=k_2q$（$k_2&lt;p$）。不妨设 $m=k_1p$，则此时 $m$ 与素数 $q$ 互质。</p>
+<p>根据费马小定理，有 $m^{q-1}\equiv1,(\bmod q)$，又由 定理 1，得 $m^{h(p-1)(q-1)}\equiv1,(\bmod q)$。</p>
+<p>因为 $(p-1)(q-1)=\phi(n)$，$ed=h\phi(n)+1$，故 $m^{ed-1}\equiv1,(\bmod q)$，改写为 $m^{ed-1}=k_3q+1$，两边乘 $m$，得 $m^{ed}=k_{3}qm+m$。</p>
+<p>用 $m=k_1p$ 替换等式右边第一项中的 $m$，得 $m^{e d}=k_{3} q k_{1} p+m$。因为 $n=pq$，故 $m^{e d}=k_{1} k_{3} \times n+m$，即 $m^{ed}\equiv m,(\bmod n)$，得证。</p>
+</li>
+</ol>
+<h2 id="安全性证明"><a href="#安全性证明" class="headerlink" title="安全性证明"></a>安全性证明</h2><p>问题：敌手已知公钥 $(n,e)$ 和密钥长度 $l$，想得到私钥 $(n,d)$</p>
+<p>由密钥长度 $l$ 和公钥 $(n,e)$ 易得 $n$ 和 $e$，因此只需求 $d$</p>
+<ol>
+<li>因为 $ed\equiv1,(\bmod \phi(n))$，因此需要求 $\phi(n)$</li>
+<li>因为 $\phi(n)=(p-1)(q-1)$，因此需要求 $p$ 和 $q$</li>
+<li>因为 $n=pq$，因此需要将 $n$ 进行质因数分解</li>
+</ol>
+<p>因为大整数质因数分解很困难，所以破解 RSA 很困难。</p>
+</div><div class="article-licensing box"><div class="licensing-title"><p>RSA 算法</p><p><a href="https://burgessx.github.io/2021/12/21/1324.html">https://burgessx.github.io/2021/12/21/1324.html</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>BurgessX</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2021-12-21</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2022-05-24</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><!--!--></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/2022/02/01/2231.html"><i class="level-item fas fa-chevron-left"></i><span class="level-item">用 Pywinauto 模块实现 Windows 应用程序自动化</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2021/08/13/1410.html"><span class="level-item">MySQL 学习笔记</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><div id="comment-container"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css"><script src="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js"></script><script>var gitalk = new Gitalk({
+            id: "c73e05995458f02d0a5fa712c298c6eb",
+            repo: "burgessx.github.io",
+            owner: "BurgessX",
+            clientID: "cf10be75c391c9cb9545",
+            clientSecret: "9e3d77f6f317597ba6e4286823d09848ce841df2",
+            admin: ["BurgessX"],
+            createIssueManually: false,
+            distractionFreeMode: false,
+            perPage: 20,
+            pagerDirection: "last",
+            
+            
+            enableHotKey: true,
+            language: "zh-CN",
+        })
+        gitalk.render('comment-container')</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="https://avatars.githubusercontent.com/u/52914833?s=400&amp;u=a6dbfe356f8206e4e29a7220973eca2b46fc0ab6&amp;v=4" alt="BurgessX"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">BurgessX</p><p class="is-size-6 is-block">College Student</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Shenzhen, Guangdong, China</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">11</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">7</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">13</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/burgessx" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/burgessx"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Facebook" href="https://facebook.com"><i class="fab fa-facebook"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Twitter" href="https://twitter.com"><i class="fab fa-twitter"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="RSS" href="/"><i class="fas fa-rss"></i></a></div></div></div><!--!--><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">链接</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://hexo.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Hexo</span></span><span class="level-right"><span class="level-item tag">hexo.io</span></span></a></li><li><a class="level is-mobile" href="https://bulma.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Bulma</span></span><span class="level-right"><span class="level-item tag">bulma.io</span></span></a></li><li><a class="level is-mobile" href="https://blog.zhangruipeng.me/hexo-theme-icarus/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Icarus</span></span><span class="level-right"><span class="level-item tag">blog.zhangruipeng.me</span></span></a></li></ul></div></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/Git/"><span class="level-start"><span class="level-item">Git</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/LaTeX/"><span class="level-start"><span class="level-item">LaTeX</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/Linux/"><span class="level-start"><span class="level-item">Linux</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/Python/"><span class="level-start"><span class="level-item">Python</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/categories/%E5%8D%9A%E5%AE%A2/"><span class="level-start"><span class="level-item">博客</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"><span class="level-start"><span class="level-item">数据库</span></span><span class="level-end"><span class="level-item tag">1</span></span></a><ul><li><a class="level is-mobile" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/MySQL/"><span class="level-start"><span class="level-item">MySQL</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-03-31T15:30:00.000Z">2022-03-31</time></p><p class="title"><a href="/2022/03/31/2330.html">Conda 常用命令</a></p><p class="categories"><a href="/categories/Python/">Python</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-03-02T08:59:00.000Z">2022-03-02</time></p><p class="title"><a href="/2022/03/02/1659.html">Selenium 模块学习笔记</a></p><p class="categories"><a href="/categories/Python/">Python</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-02-01T14:31:00.000Z">2022-02-01</time></p><p class="title"><a href="/2022/02/01/2231.html">用 Pywinauto 模块实现 Windows 应用程序自动化</a></p><p class="categories"><a href="/categories/Python/">Python</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-12-21T05:24:00.000Z">2021-12-21</time></p><p class="title"><a href="/2021/12/21/1324.html">RSA 算法</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-08-13T06:10:00.000Z">2021-08-13</time></p><p class="title"><a href="/2021/08/13/1410.html">MySQL 学习笔记</a></p><p class="categories"><a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a> / <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/MySQL/">MySQL</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2022/03/"><span class="level-start"><span class="level-item">三月 2022</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2022/02/"><span class="level-start"><span class="level-item">二月 2022</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/12/"><span class="level-start"><span class="level-item">十二月 2021</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/08/"><span class="level-start"><span class="level-item">八月 2021</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/02/"><span class="level-start"><span class="level-item">二月 2021</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/Git/"><span class="tag">Git</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/GitHub/"><span class="tag">GitHub</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Hexo/"><span class="tag">Hexo</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/LaTeX/"><span class="tag">LaTeX</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Linux/"><span class="tag">Linux</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/MySQL/"><span class="tag">MySQL</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Python/"><span class="tag">Python</span><span class="tag">5</span></a></div><div class="control"><a class="tags has-addons" href="/tags/TODO/"><span class="tag">TODO</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Vim/"><span class="tag">Vim</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%8D%9A%E5%AE%A2/"><span class="tag">博客</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"><span class="tag">数据库</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB/"><span class="tag">网络爬虫</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/"><span class="tag">自动化测试</span><span class="tag">1</span></a></div></div></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/">BurgessX</a><p class="is-size-7"><span>&copy; 2022 BurgessX</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><script type="text/x-mathjax-config">MathJax.Hub.Config({
+            'HTML-CSS': {
+                matchFontHeight: false
+            },
+            SVG: {
+                matchFontHeight: false
+            },
+            CommonHTML: {
+                matchFontHeight: false
+            },
+            tex2jax: {
+                inlineMath: [
+                    ['$','$'],
+                    ['\\(','\\)']
+                ]
+            }
+        });</script><script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>
